@@ -1,0 +1,1 @@
+savedcmd_/home/qxh/Threadlet-AE/benchmark/mutex/mutex.mod := printf '%s\n'   mutex.o | awk '!x[$$0]++ { print("/home/qxh/Threadlet-AE/benchmark/mutex/"$$0) }' > /home/qxh/Threadlet-AE/benchmark/mutex/mutex.mod

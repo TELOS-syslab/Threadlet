@@ -1,0 +1,41 @@
+{
+    "rust-analyzer.cargo.target": "riscv64gc-unknown-none-elf",
+    "rust-analyzer.check.extraEnv": {
+        "RUSTFLAGS": "--check-cfg cfg(ktest) --cfg ktest"
+    },
+    "rust-analyzer.check.overrideCommand": [
+        "cargo",
+        "check",
+        "--quiet",
+        "--message-format=json",
+        "--manifest-path",
+        "kernel/Cargo.toml",
+        "--target",
+        "riscv64gc-unknown-none-elf",
+        "--target",
+        "x86_64-unknown-none",
+        "-Zbuild-std=core,alloc,compiler_builtins",
+        "-Zbuild-std-features=compiler-builtins-mem"
+    ],
+    "rust-analyzer.showUnlinkedFileNotification": false,
+    "search.exclude": {
+        "**/*.code-search": false,
+        "**/bower_components": false,
+        "**/node_modules": false
+    },
+    "search.useIgnoreFiles": false,
+    "files.exclude": {
+        "**/.DS_Store": false,
+        "**/.git": false,
+        "**/.hg": false,
+        "**/.svn": false,
+        "**/CVS": false,
+        "**/Thumbs.db": false
+    },
+    "files.associations": {
+        "unistd.h": "c",
+        "pmp.h": "c",
+        "ethernet.h": "c",
+        "if_packet.h": "c"
+    }
+}

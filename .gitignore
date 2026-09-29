@@ -1,0 +1,6 @@
+.DS_Store
+._*
+__pycache__/
+*.py[cod]
+/.final-audit/
+/.release-audit/

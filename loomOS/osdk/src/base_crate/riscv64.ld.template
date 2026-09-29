@@ -1,0 +1,109 @@
+OUTPUT_ARCH(riscv)
+ENTRY(_start)
+EXTERN(_ap_startup)
+KERNEL_LMA = 0x80200000;
+KERNEL_VMA = 0xffffffff80200000;
+KERNEL_VMA_OFFSET = KERNEL_VMA - KERNEL_LMA;
+
+TRAMPOLINE_EXEC_VMA = 0x10000;
+
+SECTIONS
+{
+    . = KERNEL_VMA;
+
+    PROVIDE(__executable_start = .);
+    __kernel_start = .;
+
+    .text : AT(ADDR(.text) - KERNEL_VMA_OFFSET) {
+        /* Record both virtual and physical entry points for firmware */
+        PROVIDE(__kernel_entry = .);
+        PROVIDE(__kernel_entry_phys = __kernel_entry - KERNEL_VMA_OFFSET);
+        *(.text.entry)
+        PROVIDE(__trampoline_start = .);
+        *(.text.trampoline)
+        PROVIDE(__trampoline_end = .);
+        
+        /* 5. 放置所有其他常规 .text 代码 */
+        *(.text .text.*)
+        
+        PROVIDE(__etext = .);
+    }
+
+
+
+    # The section to store exception table (ExTable).
+    # This table is used for recovering from specific exception handling faults
+    # occurring at known points in the code.
+    # Ref: /ostd/src/arch/riscv/ex_table.rs
+    .ex_table               : AT(ADDR(.ex_table) - KERNEL_VMA_OFFSET) {
+        __ex_table = .;
+        KEEP(*(SORT(.ex_table)))
+        __ex_table_end = .;
+    }
+
+    .rodata : AT(ADDR(.rodata) - KERNEL_VMA_OFFSET) { *(.rodata .rodata.*) }
+
+    .eh_frame_hdr           : AT(ADDR(.eh_frame_hdr) - KERNEL_VMA_OFFSET) {
+        PROVIDE(__GNU_EH_FRAME_HDR = .);
+        KEEP(*(.eh_frame_hdr .eh_frame_hdr.*))
+    }
+    . = ALIGN(8);
+    .eh_frame               : AT(ADDR(.eh_frame) - KERNEL_VMA_OFFSET) {
+        PROVIDE(__eh_frame = .);
+        KEEP(*(.eh_frame .eh_frame.*))
+    }
+
+    # The list of unit test function symbols that should be executed while
+    # doing `cargo osdk test`.
+    .ktest_array            : AT(ADDR(.ktest_array) - KERNEL_VMA_OFFSET) {
+        __ktest_array = .;
+        KEEP(*(SORT(.ktest_array)))
+        __ktest_array_end = .;
+    }
+
+    .init_array             : AT(ADDR(.init_array) - KERNEL_VMA_OFFSET) {
+        __sinit_array = .;
+        KEEP(*(SORT(.init_array .init_array.*)))
+        __einit_array = .;
+    }
+
+    . = DATA_SEGMENT_RELRO_END(0, .);
+
+    .data : AT(ADDR(.data) - KERNEL_VMA_OFFSET) { *(.data .data.*) }
+
+    # The CPU local data storage. It is readable and writable for the bootstrap
+    # processor, while it would be copied to other dynamically allocated memory
+    # areas for the application processors.
+    .cpu_local              : AT(ADDR(.cpu_local) - KERNEL_VMA_OFFSET) {
+        __cpu_local_start = .;
+        KEEP(*(SORT(.cpu_local)))
+        __cpu_local_end = .;
+    }
+
+    /* boot stack (in entry.S) */
+    .stack : AT(ADDR(.stack) - KERNEL_VMA_OFFSET) {
+        *(.bss.stack)
+    }
+    /* boot ap stack */
+    /* AT(lma) */
+    .apstack : AT(ADDR(.apstack) - KERNEL_VMA_OFFSET) {
+    PROVIDE(__ap_stacks_start = .);
+    # PROVIDE(__ap_stacks_start_pa = . - KERNEL_VMA_OFFSET);
+        *(.bss.apstack)
+    PROVIDE(__ap_stacks_end = .);
+    # PROVIDE(__ap_stacks_end_pa = . - KERNEL_VMA_OFFSET);
+    }
+
+    .bss : AT(ADDR(.bss) - KERNEL_VMA_OFFSET) {
+        __bss = .;
+        *(.bss .bss.*)
+        *(.sbss .sbss.*)
+        *(.bss.rel.ro .bss.rel.ro.*)
+        __bss_end = .;
+    }
+
+    . = DATA_SEGMENT_END(.);
+    __kernel_end = .;
+}
+
+PROVIDE(__ap_startup_offset = _ap_startup - __trampoline_start);

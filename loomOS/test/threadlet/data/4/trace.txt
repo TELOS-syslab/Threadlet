@@ -1,0 +1,542 @@
+cpus=4
+           <...>-7480  [003]  5847.594332: sched_waking:         comm=fpga_server pid=7464 prio=120 target_cpu=001
+           <...>-7473  [001]  5847.594903: sched_wakeup:         fpga_server:7464 [120]<CANT FIND FIELD success> CPU:001
+           <...>-7479  [001]  5847.598194: sched_switch:         fpga_client:7479 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.601171: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.601373: softirq_raise:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.601462: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=2924100 [ns] vruntime=644957295869 [ns]
+     fpga_server-7464  [001]  5847.601612: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.601666: softirq_entry:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.601719: softirq_exit:         vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.601799: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=340200 [ns] vruntime=644957636069 [ns]
+     fpga_server-7464  [001]  5847.601871: sched_switch:         fpga_server:7464 [120] R ==> tmux: server:5368 [120]
+           <...>-7486  [001]  5847.609845: sched_switch:         fpga_client:7486 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.610766: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.610850: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=1035400 [ns] vruntime=644958671469 [ns]
+     fpga_server-7464  [001]  5847.610931: sched_wakeup:         tmux: server:5368 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.610981: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.611080: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=232100 [ns] vruntime=644958903569 [ns]
+     fpga_server-7464  [001]  5847.611231: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7490
+     fpga_server-7464  [001]  5847.611377: sched_wakeup_new:     fpga_server:7490 [120]<CANT FIND FIELD success> CPU:000
+     fpga_server-7464  [001]  5847.613062: sched_waking:         comm=kworker/u10:2 pid=211 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.613223: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=2083900 [ns] vruntime=644960987469 [ns]
+     fpga_server-7464  [001]  5847.613293: sched_wakeup:         kworker/u10:2:211 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.613374: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.613490: softirq_raise:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.613565: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=147600 [ns] vruntime=644961388269 [ns]
+     fpga_server-7464  [001]  5847.613696: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.613770: softirq_entry:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.613855: sched_waking:         comm=rcu_sched pid=16 prio=120 target_cpu=002
+     fpga_server-7464  [001]  5847.613961: softirq_exit:         vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.614037: sched_waking:         comm=kworker/u10:2 pid=211 prio=120 target_cpu=002
+     fpga_server-7464  [001]  5847.614100: sched_migrate_task:   comm=kworker/u10:2 pid=211 prio=120 orig_cpu=2 dest_cpu=1
+     fpga_server-7464  [001]  5847.614214: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=647100 [ns] vruntime=644962035369 [ns]
+     fpga_server-7464  [001]  5847.614275: sched_wakeup:         kworker/u10:2:211 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.614383: sched_switch:         fpga_server:7464 [120] R ==> fpga_client:7476 [120]
+    tmux: server-5368  [001]  5847.621588: sched_switch:         tmux: server:5368 [120] R ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.623617: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=2052100 [ns] vruntime=644964087469 [ns]
+     fpga_server-7464  [001]  5847.623803: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.623884: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=269900 [ns] vruntime=644964357369 [ns]
+     fpga_server-7464  [001]  5847.623952: sched_wakeup:         fpga_client:7486 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.624003: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.624054: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7501
+     fpga_server-7464  [001]  5847.624184: sched_stat_runtime:   comm=fpga_client pid=7499 runtime=511900 [ns] vruntime=792008632431 [ns]
+     fpga_server-7464  [001]  5847.624244: sched_wakeup_new:     fpga_server:7501 [120]<CANT FIND FIELD success> CPU:002
+     fpga_server-7464  [001]  5847.624329: sched_switch:         fpga_server:7464 [120] R ==> tmux: server:5368 [120]
+           <...>-7503  [001]  5847.632503: sched_switch:         fpga_client:7503 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.632760: sched_waking:         comm=kworker/u10:2 pid=211 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.632848: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=403000 [ns] vruntime=644964760369 [ns]
+     fpga_server-7464  [001]  5847.632913: sched_wakeup:         kworker/u10:2:211 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.633217: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.633346: softirq_raise:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.633429: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=580700 [ns] vruntime=644965341069 [ns]
+     fpga_server-7464  [001]  5847.633573: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.633616: softirq_entry:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.633673: sched_waking:         comm=rcu_sched pid=16 prio=120 target_cpu=002
+     fpga_server-7464  [001]  5847.633782: softirq_exit:         vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.634754: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=970600 [ns] vruntime=644966666369 [ns]
+     fpga_server-7464  [001]  5847.634925: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7509
+     fpga_server-7464  [001]  5847.635036: sched_stat_runtime:   comm=fpga_client pid=7470 runtime=357300 [ns] vruntime=597139666420 [ns]
+     fpga_server-7464  [001]  5847.635099: sched_wakeup_new:     fpga_server:7509 [120]<CANT FIND FIELD success> CPU:003
+     fpga_server-7464  [001]  5847.635212: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=460200 [ns] vruntime=644967126569 [ns]
+     fpga_server-7464  [001]  5847.635282: sched_switch:         fpga_server:7464 [120] R ==> kworker/u10:2:211 [120]
+           <...>-7508  [001]  5847.636882: sched_switch:         fpga_client:7508 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.637104: sched_waking:         comm=kworker/u10:2 pid=211 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.637227: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=366600 [ns] vruntime=644967493169 [ns]
+     fpga_server-7464  [001]  5847.637295: sched_wakeup:         kworker/u10:2:211 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.637368: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.637480: softirq_raise:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.637555: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=341400 [ns] vruntime=644967834569 [ns]
+     fpga_server-7464  [001]  5847.637679: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.637721: softirq_entry:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.637773: softirq_exit:         vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.637881: sched_switch:         fpga_server:7464 [120] R ==> kworker/u10:2:211 [120]
+   kworker/u10:2-211   [001]  5847.638034: sched_switch:         kworker/u10:2:211 [120] W ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.639144: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=1136600 [ns] vruntime=644968971169 [ns]
+     fpga_server-7464  [001]  5847.639302: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7514
+     fpga_server-7464  [001]  5847.639413: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=269500 [ns] vruntime=644969240669 [ns]
+     fpga_server-7464  [001]  5847.639473: sched_wakeup_new:     fpga_server:7514 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.639553: sched_switch:         fpga_server:7464 [120] R ==> fpga_client:7510 [120]
+   kworker/u10:2-211   [001]  5847.647895: sched_switch:         kworker/u10:2:211 [120] W ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.648092: sched_waking:         comm=kworker/u10:2 pid=211 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.648193: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=334000 [ns] vruntime=644969574669 [ns]
+     fpga_server-7464  [001]  5847.648257: sched_wakeup:         kworker/u10:2:211 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.648366: sched_switch:         fpga_server:7464 [120] R ==> kworker/u10:2:211 [120]
+   kworker/u10:2-211   [001]  5847.648519: sched_switch:         kworker/u10:2:211 [120] W ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.649548: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.649870: softirq_raise:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.649948: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=1458000 [ns] vruntime=644971032669 [ns]
+     fpga_server-7464  [001]  5847.650073: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.650143: irq_handler_entry:    irq=7 name=IPI
+     fpga_server-7464  [001]  5847.650283: sched_waking:         comm=trace-cmd pid=7467 prio=120 target_cpu=000
+     fpga_server-7464  [001]  5847.650341: sched_migrate_task:   comm=trace-cmd pid=7467 prio=120 orig_cpu=0 dest_cpu=1
+     fpga_server-7464  [001]  5847.650439: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=475400 [ns] vruntime=644971508069 [ns]
+     fpga_server-7464  [001]  5847.650509: sched_wakeup:         trace-cmd:7467 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.650647: irq_handler_exit:     irq=7 ret=handled
+     fpga_server-7464  [001]  5847.650704: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.650781: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=356200 [ns] vruntime=644971864269 [ns]
+     fpga_server-7464  [001]  5847.650845: sched_wakeup:         fpga_client:7510 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.650899: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.650944: softirq_entry:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.651011: softirq_exit:         vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.651194: sched_switch:         fpga_server:7464 [120] R ==> tmux: server:5368 [120]
+           <...>-7524  [001]  5847.661112: sched_switch:         fpga_client:7524 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.661236: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.661369: softirq_raise:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.661455: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=383300 [ns] vruntime=644972247569 [ns]
+     fpga_server-7464  [001]  5847.661575: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.661618: softirq_entry:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.661673: sched_waking:         comm=rcu_sched pid=16 prio=120 target_cpu=002
+     fpga_server-7464  [001]  5847.661782: softirq_exit:         vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.662321: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=870400 [ns] vruntime=644973117969 [ns]
+     fpga_server-7464  [001]  5847.662469: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7528
+     fpga_server-7464  [001]  5847.662587: sched_wakeup_new:     fpga_server:7528 [120]<CANT FIND FIELD success> CPU:000
+     fpga_server-7464  [001]  5847.662779: sched_waking:         comm=kworker/u10:2 pid=211 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.662862: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=535500 [ns] vruntime=644973653469 [ns]
+     fpga_server-7464  [001]  5847.662931: sched_wakeup:         kworker/u10:2:211 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.663038: sched_switch:         fpga_server:7464 [120] R ==> kworker/u10:2:211 [120]
+    tmux: server-5368  [001]  5847.671312: sched_switch:         tmux: server:5368 [120] R ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.671440: sched_waking:         comm=fpga_server pid=7501 prio=120 target_cpu=002
+     fpga_server-7464  [001]  5847.672648: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=1372700 [ns] vruntime=644975026169 [ns]
+     fpga_server-7464  [001]  5847.672806: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7532
+     fpga_server-7464  [001]  5847.672910: sched_stat_runtime:   comm=fpga_client pid=7470 runtime=310900 [ns] vruntime=597157871820 [ns]
+     fpga_server-7464  [001]  5847.672969: sched_wakeup_new:     fpga_server:7532 [120]<CANT FIND FIELD success> CPU:003
+     fpga_server-7464  [001]  5847.673079: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=412500 [ns] vruntime=644975438669 [ns]
+     fpga_server-7464  [001]  5847.673174: sched_switch:         fpga_server:7464 [120] R ==> fpga_client:7524 [120]
+           <...>-7473  [001]  5847.674485: sched_switch:         fpga_client:7473 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.675359: sched_waking:         comm=fpga_server pid=7532 prio=120 target_cpu=003
+     fpga_server-7464  [001]  5847.675962: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=1510400 [ns] vruntime=644976949069 [ns]
+     fpga_server-7464  [001]  5847.676118: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7535
+     fpga_server-7464  [001]  5847.676226: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=260600 [ns] vruntime=644977209669 [ns]
+     fpga_server-7464  [001]  5847.676285: sched_wakeup_new:     fpga_server:7535 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.676616: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.676695: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=467200 [ns] vruntime=644977676869 [ns]
+     fpga_server-7464  [001]  5847.676758: sched_wakeup:         fpga_client:7524 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.676806: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.676959: sched_switch:         fpga_server:7464 [120] R ==> fpga_client:7524 [120]
+     fpga_server-7535  [001]  5847.682656: sched_switch:         fpga_server:7535 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.682752: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.682829: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=214900 [ns] vruntime=644977891769 [ns]
+     fpga_server-7464  [001]  5847.682897: sched_wakeup:         fpga_server:7514 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.682945: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.683023: sched_switch:         fpga_server:7464 [120] R ==> fpga_server:7514 [120]
+     fpga_server-7514  [001]  5847.690140: sched_switch:         fpga_server:7514 [120] R ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.691336: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=1302000 [ns] vruntime=644979193769 [ns]
+     fpga_server-7464  [001]  5847.691487: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7542
+     fpga_server-7464  [001]  5847.691599: sched_stat_runtime:   comm=fpga_client pid=7470 runtime=51100 [ns] vruntime=597164891120 [ns]
+     fpga_server-7464  [001]  5847.691659: sched_wakeup_new:     fpga_server:7542 [120]<CANT FIND FIELD success> CPU:003
+     fpga_server-7464  [001]  5847.691867: sched_waking:         comm=kworker/u10:2 pid=211 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.691953: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=616800 [ns] vruntime=644979810569 [ns]
+     fpga_server-7464  [001]  5847.692019: sched_wakeup:         kworker/u10:2:211 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.692129: sched_switch:         fpga_server:7464 [120] R ==> kworker/u10:2:211 [120]
+     fpga_server-7514  [001]  5847.694265: sched_switch:         fpga_server:7514 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.694632: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.694716: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=474500 [ns] vruntime=644980285069 [ns]
+     fpga_server-7464  [001]  5847.694780: sched_wakeup:         fpga_client:7476 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.694827: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.694971: sched_switch:         fpga_server:7464 [120] R ==> fpga_client:7476 [120]
+     fpga_client-7473  [001]  5847.703145: sched_switch:         fpga_client:7473 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.703718: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.703799: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=708300 [ns] vruntime=644980993369 [ns]
+     fpga_server-7464  [001]  5847.703862: sched_wakeup:         fpga_server:7535 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.703909: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.704361: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=539400 [ns] vruntime=644981532769 [ns]
+     fpga_server-7464  [001]  5847.704527: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7546
+     fpga_server-7464  [001]  5847.704632: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=296400 [ns] vruntime=644981829169 [ns]
+     fpga_server-7464  [001]  5847.704693: sched_wakeup_new:     fpga_server:7546 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.705187: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.705309: softirq_raise:        vec=1 [action=TIMER]
+     fpga_server-7464  [001]  5847.705384: softirq_raise:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.705494: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=825100 [ns] vruntime=644982654269 [ns]
+     fpga_server-7464  [001]  5847.705649: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.705691: softirq_entry:        vec=1 [action=TIMER]
+     fpga_server-7464  [001]  5847.705737: softirq_exit:         vec=1 [action=TIMER]
+     fpga_server-7464  [001]  5847.705771: softirq_entry:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.705822: sched_waking:         comm=rcu_sched pid=16 prio=120 target_cpu=002
+     fpga_server-7464  [001]  5847.705943: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.706018: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=558700 [ns] vruntime=644983212969 [ns]
+     fpga_server-7464  [001]  5847.706080: sched_wakeup:         fpga_client:7476 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.706126: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.706177: softirq_exit:         vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.706253: sched_switch:         fpga_server:7464 [120] R ==> fpga_server:7535 [120]
+     fpga_server-7514  [001]  5847.707124: sched_switch:         fpga_server:7514 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.707659: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=559900 [ns] vruntime=644983772869 [ns]
+     fpga_server-7464  [001]  5847.707800: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.707878: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=217300 [ns] vruntime=644983990169 [ns]
+     fpga_server-7464  [001]  5847.707938: sched_wakeup:         fpga_server:7535 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.707981: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.708082: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7548
+     fpga_server-7464  [001]  5847.708194: sched_stat_runtime:   comm=fpga_client pid=7545 runtime=179500 [ns] vruntime=792045735697 [ns]
+     fpga_server-7464  [001]  5847.708250: sched_wakeup_new:     fpga_server:7548 [120]<CANT FIND FIELD success> CPU:002
+     fpga_server-7464  [001]  5847.708417: sched_waking:         comm=kworker/u10:2 pid=211 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.708501: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=624900 [ns] vruntime=644984615069 [ns]
+     fpga_server-7464  [001]  5847.708563: sched_wakeup:         kworker/u10:2:211 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.708669: sched_switch:         fpga_server:7464 [120] R ==> kworker/u10:2:211 [120]
+     fpga_server-7546  [001]  5847.710755: sched_switch:         fpga_server:7546 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.710874: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.710972: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=240300 [ns] vruntime=644984855369 [ns]
+     fpga_server-7464  [001]  5847.711034: sched_wakeup:         fpga_server:7514 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.711080: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.711308: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.711386: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=413500 [ns] vruntime=644985268869 [ns]
+     fpga_server-7464  [001]  5847.711446: sched_wakeup:         fpga_server:7546 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.711492: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.711607: sched_switch:         fpga_server:7464 [120] R ==> fpga_server:7514 [120]
+     fpga_server-7546  [001]  5847.715087: sched_switch:         fpga_server:7546 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.715469: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.715547: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=487200 [ns] vruntime=644985756069 [ns]
+     fpga_server-7464  [001]  5847.715610: sched_wakeup:         fpga_server:7535 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.715656: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.715764: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.715838: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=292400 [ns] vruntime=644986048469 [ns]
+     fpga_server-7464  [001]  5847.715899: sched_wakeup:         fpga_client:7476 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.715943: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.716178: sched_switch:         fpga_server:7464 [120] R ==> fpga_client:7476 [120]
+     fpga_server-7546  [001]  5847.720318: sched_switch:         fpga_server:7546 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.720718: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=464800 [ns] vruntime=644986513269 [ns]
+     fpga_server-7464  [001]  5847.720868: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7552
+     fpga_server-7464  [001]  5847.720987: sched_wakeup_new:     fpga_server:7552 [120]<CANT FIND FIELD success> CPU:002
+     fpga_server-7464  [001]  5847.721211: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.721337: softirq_raise:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.721481: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=746600 [ns] vruntime=644987259869 [ns]
+     fpga_server-7464  [001]  5847.721608: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.721649: softirq_entry:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.721701: sched_waking:         comm=rcu_sched pid=16 prio=120 target_cpu=000
+     fpga_server-7464  [001]  5847.721810: softirq_exit:         vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.721917: sched_waking:         comm=kworker/u10:2 pid=211 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.722000: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=533200 [ns] vruntime=644987793069 [ns]
+     fpga_server-7464  [001]  5847.722059: sched_wakeup:         kworker/u10:2:211 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.722163: sched_switch:         fpga_server:7464 [120] R ==> fpga_server:7514 [120]
+     fpga_server-7546  [001]  5847.724451: sched_switch:         fpga_server:7546 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.724685: sched_waking:         comm=fpga_server pid=7514 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.724930: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=453600 [ns] vruntime=644988246669 [ns]
+     fpga_server-7464  [001]  5847.725020: sched_wakeup:         fpga_server:7514 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.725927: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.726990: softirq_raise:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.727080: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=2211100 [ns] vruntime=644990457769 [ns]
+     fpga_server-7464  [001]  5847.727205: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.727249: softirq_entry:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.727354: softirq_exit:         vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.727641: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=568500 [ns] vruntime=644991026269 [ns]
+     fpga_server-7464  [001]  5847.727707: sched_switch:         fpga_server:7464 [120] R ==> fpga_server:7514 [120]
+     fpga_server-7535  [001]  5847.737112: sched_switch:         fpga_server:7535 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.737225: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.737352: softirq_raise:        vec=1 [action=TIMER]
+     fpga_server-7464  [001]  5847.737442: softirq_raise:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.737521: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=454600 [ns] vruntime=644991480869 [ns]
+     fpga_server-7464  [001]  5847.737663: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.737720: softirq_entry:        vec=1 [action=TIMER]
+     fpga_server-7464  [001]  5847.737761: softirq_exit:         vec=1 [action=TIMER]
+     fpga_server-7464  [001]  5847.737792: softirq_entry:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.738034: softirq_exit:         vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.738589: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=1026000 [ns] vruntime=644992506869 [ns]
+     fpga_server-7464  [001]  5847.738738: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7558
+     fpga_server-7464  [001]  5847.738838: sched_stat_runtime:   comm=tmux: server pid=5368 runtime=99800 [ns] vruntime=792059660698 [ns]
+     fpga_server-7464  [001]  5847.738901: sched_wakeup_new:     fpga_server:7558 [120]<CANT FIND FIELD success> CPU:002
+     fpga_server-7464  [001]  5847.739087: sched_waking:         comm=kworker/u10:2 pid=211 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.739172: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=623500 [ns] vruntime=644993130369 [ns]
+     fpga_server-7464  [001]  5847.739231: sched_wakeup:         kworker/u10:2:211 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.739344: sched_switch:         fpga_server:7464 [120] R ==> fpga_server:7546 [120]
+   kworker/u10:2-211   [001]  5847.743412: sched_switch:         kworker/u10:2:211 [120] W ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.743514: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.743609: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=225800 [ns] vruntime=644993356169 [ns]
+     fpga_server-7464  [001]  5847.743704: sched_wakeup:         fpga_server:7535 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.743780: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.744627: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=1036700 [ns] vruntime=644994392869 [ns]
+     fpga_server-7464  [001]  5847.744788: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7562
+     fpga_server-7464  [001]  5847.744902: sched_stat_runtime:   comm=tmux: server pid=5368 runtime=656100 [ns] vruntime=792062286178 [ns]
+     fpga_server-7464  [001]  5847.745065: sched_wakeup_new:     fpga_server:7562 [120]<CANT FIND FIELD success> CPU:002
+     fpga_server-7464  [001]  5847.747381: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.747517: softirq_raise:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.747599: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=2969200 [ns] vruntime=644997362069 [ns]
+     fpga_server-7464  [001]  5847.747720: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.747765: softirq_entry:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.747825: softirq_exit:         vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.747901: sched_waking:         comm=kworker/u10:2 pid=211 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.748000: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=398400 [ns] vruntime=644997760469 [ns]
+     fpga_server-7464  [001]  5847.748064: sched_wakeup:         kworker/u10:2:211 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.748131: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.748216: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=211700 [ns] vruntime=644997972169 [ns]
+     fpga_server-7464  [001]  5847.748279: sched_wakeup:         fpga_server:7546 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.748327: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.748383: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.748457: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=251400 [ns] vruntime=644998223569 [ns]
+     fpga_server-7464  [001]  5847.748514: sched_wakeup:         fpga_client:7476 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.748559: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.748676: sched_switch:         fpga_server:7464 [120] R ==> fpga_server:7535 [120]
+     fpga_client-7479  [001]  5847.766572: sched_switch:         fpga_client:7479 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.766688: sched_waking:         comm=fpga_server pid=7532 prio=120 target_cpu=000
+     fpga_server-7464  [001]  5847.767138: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.767217: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=142900 [ns] vruntime=644998894869 [ns]
+     fpga_server-7464  [001]  5847.767277: sched_wakeup:         fpga_server:7546 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.767324: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.767732: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=516500 [ns] vruntime=644999411369 [ns]
+     fpga_server-7464  [001]  5847.768102: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7570
+     fpga_server-7464  [001]  5847.768291: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=557000 [ns] vruntime=644999968369 [ns]
+     fpga_server-7464  [001]  5847.768350: sched_wakeup_new:     fpga_server:7570 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.768431: sched_switch:         fpga_server:7464 [120] R ==> fpga_client:7569 [120]
+     fpga_server-7535  [001]  5847.776470: sched_switch:         fpga_server:7535 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.776668: sched_waking:         comm=kworker/u10:0 pid=7424 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.776754: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=308500 [ns] vruntime=645000276869 [ns]
+     fpga_server-7464  [001]  5847.776819: sched_wakeup:         kworker/u10:0:7424 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.777191: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.777354: softirq_raise:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.777463: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=687000 [ns] vruntime=645000963869 [ns]
+     fpga_server-7464  [001]  5847.777589: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.777652: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.777729: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=288000 [ns] vruntime=645001251869 [ns]
+     fpga_server-7464  [001]  5847.777791: sched_wakeup:         fpga_server:7546 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.777838: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.777883: softirq_entry:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.777929: softirq_exit:         vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.778313: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.778391: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=661100 [ns] vruntime=645001912969 [ns]
+     fpga_server-7464  [001]  5847.778454: sched_wakeup:         fpga_server:7535 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.778500: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.778731: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=342200 [ns] vruntime=645002255169 [ns]
+     fpga_server-7464  [001]  5847.778872: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7574
+     fpga_server-7464  [001]  5847.779013: sched_stat_runtime:   comm=fpga_client pid=7470 runtime=62300 [ns] vruntime=597199477820 [ns]
+     fpga_server-7464  [001]  5847.779069: sched_wakeup_new:     fpga_server:7574 [120]<CANT FIND FIELD success> CPU:003
+     fpga_server-7464  [001]  5847.779160: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=429100 [ns] vruntime=645002684269 [ns]
+     fpga_server-7464  [001]  5847.779226: sched_switch:         fpga_server:7464 [120] R ==> kworker/u10:0:7424 [120]
+     fpga_server-7570  [001]  5847.784281: sched_switch:         fpga_server:7570 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.784376: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.784461: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=203200 [ns] vruntime=645002887469 [ns]
+     fpga_server-7464  [001]  5847.784524: sched_wakeup:         fpga_client:7476 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.784569: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.784639: sched_switch:         fpga_server:7464 [120] R ==> fpga_client:7476 [120]
+     ksoftirqd/1-21    [001]  5847.785916: sched_switch:         ksoftirqd/1:21 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.786116: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.786194: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=313600 [ns] vruntime=645003201069 [ns]
+     fpga_server-7464  [001]  5847.786257: sched_wakeup:         fpga_server:7546 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.786319: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.786406: sched_waking:         comm=kworker/u10:0 pid=7424 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.786528: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=309600 [ns] vruntime=645003510669 [ns]
+     fpga_server-7464  [001]  5847.786586: sched_wakeup:         kworker/u10:0:7424 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.786641: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.786708: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=208800 [ns] vruntime=645003719469 [ns]
+     fpga_server-7464  [001]  5847.786764: sched_wakeup:         fpga_server:7570 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.786808: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.786918: sched_switch:         fpga_server:7464 [120] R ==> kworker/u10:0:7424 [120]
+     fpga_server-7535  [001]  5847.789118: sched_switch:         fpga_server:7535 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.789256: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.789491: softirq_raise:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.789616: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=524500 [ns] vruntime=645004243969 [ns]
+     fpga_server-7464  [001]  5847.789769: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.789814: softirq_entry:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.789867: sched_waking:         comm=rcu_sched pid=16 prio=120 target_cpu=000
+     fpga_server-7464  [001]  5847.789974: softirq_exit:         vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.790340: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.790427: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=716400 [ns] vruntime=645005046269 [ns]
+     fpga_server-7464  [001]  5847.790489: sched_wakeup:         fpga_client:7476 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.790534: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.790606: sched_switch:         fpga_server:7464 [120] R ==> fpga_client:7578 [120]
+     fpga_client-7479  [001]  5847.795439: sched_switch:         fpga_client:7479 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.795742: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=336700 [ns] vruntime=645005382969 [ns]
+     fpga_server-7464  [001]  5847.795893: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7580
+     fpga_server-7464  [001]  5847.796003: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=257800 [ns] vruntime=645005640769 [ns]
+     fpga_server-7464  [001]  5847.796063: sched_wakeup_new:     fpga_server:7580 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.796229: sched_waking:         comm=kworker/u10:0 pid=7424 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.796311: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=311300 [ns] vruntime=645005952069 [ns]
+     fpga_server-7464  [001]  5847.796373: sched_wakeup:         kworker/u10:0:7424 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.796484: sched_switch:         fpga_server:7464 [120] R ==> kworker/u10:0:7424 [120]
+     fpga_client-7486  [001]  5847.799873: sched_switch:         fpga_client:7486 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.800596: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=749900 [ns] vruntime=645006701969 [ns]
+     fpga_server-7464  [001]  5847.800747: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7584
+     fpga_server-7464  [001]  5847.800863: sched_stat_runtime:   comm=fpga_client pid=7573 runtime=82700 [ns] vruntime=2705753288457 [ns]
+     fpga_server-7464  [001]  5847.800923: sched_wakeup_new:     fpga_server:7584 [120]<CANT FIND FIELD success> CPU:000
+     fpga_server-7464  [001]  5847.801109: sched_waking:         comm=kworker/u10:0 pid=7424 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.801247: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=634400 [ns] vruntime=645007336369 [ns]
+     fpga_server-7464  [001]  5847.801316: sched_wakeup:         kworker/u10:0:7424 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.801383: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.801574: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=340600 [ns] vruntime=645007676969 [ns]
+     fpga_server-7464  [001]  5847.801713: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.801828: sched_switch:         fpga_server:7464 [120] R ==> kworker/u10:0:7424 [120]
+     fpga_server-7570  [001]  5847.806120: sched_switch:         fpga_server:7570 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.806195: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.806274: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=190700 [ns] vruntime=645007867669 [ns]
+     fpga_server-7464  [001]  5847.806338: sched_wakeup:         fpga_client:7479 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.806385: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.806463: sched_switch:         fpga_server:7464 [120] R ==> fpga_client:7479 [120]
+     fpga_client-7479  [001]  5847.807176: sched_switch:         fpga_client:7479 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.807285: sched_waking:         comm=fpga_server pid=7546 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.807370: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=224900 [ns] vruntime=645008092569 [ns]
+     fpga_server-7464  [001]  5847.807433: sched_wakeup:         fpga_server:7546 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.807506: sched_switch:         fpga_server:7464 [120] R ==> fpga_server:7546 [120]
+     ksoftirqd/1-21    [001]  5847.815494: sched_switch:         ksoftirqd/1:21 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.815934: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=455000 [ns] vruntime=645008547569 [ns]
+     fpga_server-7464  [001]  5847.815987: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.816047: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=120000 [ns] vruntime=645008667569 [ns]
+     fpga_server-7464  [001]  5847.816097: sched_wakeup:         fpga_client:7578 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.816134: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.816254: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7590
+     fpga_server-7464  [001]  5847.816338: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=290900 [ns] vruntime=645008958469 [ns]
+     fpga_server-7464  [001]  5847.816385: sched_wakeup_new:     fpga_server:7590 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.816522: sched_waking:         comm=kworker/u10:0 pid=7424 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.816587: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=249000 [ns] vruntime=645009207469 [ns]
+     fpga_server-7464  [001]  5847.816635: sched_wakeup:         kworker/u10:0:7424 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.816947: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.817009: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=420800 [ns] vruntime=645009628269 [ns]
+     fpga_server-7464  [001]  5847.817058: sched_wakeup:         fpga_client:7479 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.817125: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.817175: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.817303: softirq_raise:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.817383: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=374800 [ns] vruntime=645010003069 [ns]
+     fpga_server-7464  [001]  5847.817492: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.817525: softirq_entry:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.817570: sched_waking:         comm=rcu_sched pid=16 prio=120 target_cpu=000
+     fpga_server-7464  [001]  5847.817655: softirq_exit:         vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.817837: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=455600 [ns] vruntime=645010458669 [ns]
+     fpga_server-7464  [001]  5847.817958: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7591
+     fpga_server-7464  [001]  5847.818042: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=202700 [ns] vruntime=645010661369 [ns]
+     fpga_server-7464  [001]  5847.818089: sched_wakeup_new:     fpga_server:7591 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.818152: sched_switch:         fpga_server:7464 [120] R ==> fpga_client:7588 [120]
+     fpga_server-7580  [001]  5847.820777: sched_switch:         fpga_server:7580 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.820829: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.820873: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=113700 [ns] vruntime=645010775069 [ns]
+     fpga_server-7464  [001]  5847.820909: sched_wakeup:         fpga_server:7590 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.820935: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.820980: sched_switch:         fpga_server:7464 [120] R ==> fpga_server:7590 [120]
+     fpga_client-7486  [001]  5847.823561: sched_switch:         fpga_client:7486 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.823683: sched_waking:         comm=kworker/u10:0 pid=7424 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.823733: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=188600 [ns] vruntime=645010963669 [ns]
+     fpga_server-7464  [001]  5847.823770: sched_wakeup:         kworker/u10:0:7424 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.823847: sched_switch:         fpga_server:7464 [120] R ==> kworker/u10:0:7424 [120]
+     fpga_client-7578  [001]  5847.824721: sched_switch:         fpga_client:7578 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.824998: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=292600 [ns] vruntime=645011256269 [ns]
+     fpga_server-7464  [001]  5847.825041: sched_switch:         fpga_server:7464 [120] D ==> fpga_server:7570 [120]
+     fpga_server-7584  [000]  5847.830348: sched_waking:         comm=fpga_server pid=7464 prio=120 target_cpu=001
+     fpga_client-7578  [001]  5847.830506: sched_wakeup:         fpga_server:7464 [120]<CANT FIND FIELD success> CPU:001
+           <...>-7598  [001]  5847.832735: sched_switch:         fpga_client:7598 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.832913: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.832957: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=237300 [ns] vruntime=645012508047 [ns]
+     fpga_server-7464  [001]  5847.832993: sched_wakeup:         fpga_server:7570 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.833021: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.833130: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.833205: softirq_raise:        vec=1 [action=TIMER]
+     fpga_server-7464  [001]  5847.833234: softirq_raise:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.833283: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=322700 [ns] vruntime=645012830747 [ns]
+     fpga_server-7464  [001]  5847.833363: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.833387: softirq_entry:        vec=1 [action=TIMER]
+     fpga_server-7464  [001]  5847.833416: sched_waking:         comm=kcompactd0 pid=45 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.833462: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=183100 [ns] vruntime=645013013847 [ns]
+     fpga_server-7464  [001]  5847.833498: sched_wakeup:         kcompactd0:45 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.833527: softirq_exit:         vec=1 [action=TIMER]
+     fpga_server-7464  [001]  5847.833545: softirq_entry:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.833578: softirq_exit:         vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.833832: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=369400 [ns] vruntime=645013383247 [ns]
+     fpga_server-7464  [001]  5847.833920: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7603
+     fpga_server-7464  [001]  5847.833992: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=159600 [ns] vruntime=645013542847 [ns]
+     fpga_server-7464  [001]  5847.834026: sched_wakeup_new:     fpga_server:7603 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.834136: sched_waking:         comm=kworker/u10:0 pid=7424 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.834181: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=190200 [ns] vruntime=645013733047 [ns]
+     fpga_server-7464  [001]  5847.834218: sched_wakeup:         kworker/u10:0:7424 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.834284: sched_switch:         fpga_server:7464 [120] R ==> kworker/u10:0:7424 [120]
+     fpga_server-7590  [001]  5847.839024: sched_switch:         fpga_server:7590 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.839473: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=466300 [ns] vruntime=645014199347 [ns]
+     fpga_server-7464  [001]  5847.839571: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7607
+     fpga_server-7464  [001]  5847.839633: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=162100 [ns] vruntime=645014361447 [ns]
+     fpga_server-7464  [001]  5847.839668: sched_wakeup_new:     fpga_server:7607 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.839776: sched_waking:         comm=kworker/u10:0 pid=7424 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.839824: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=189400 [ns] vruntime=645014550847 [ns]
+     fpga_server-7464  [001]  5847.839858: sched_wakeup:         kworker/u10:0:7424 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.839923: sched_switch:         fpga_server:7464 [120] R ==> kworker/u10:0:7424 [120]
+     fpga_client-7486  [001]  5847.843829: sched_switch:         fpga_client:7486 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.843894: sched_waking:         comm=fpga_server pid=7552 prio=120 target_cpu=002
+     fpga_server-7464  [001]  5847.844682: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=869600 [ns] vruntime=645015420447 [ns]
+     fpga_server-7464  [001]  5847.844772: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7610
+     fpga_server-7464  [001]  5847.844834: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=153300 [ns] vruntime=645015573747 [ns]
+     fpga_server-7464  [001]  5847.844869: sched_wakeup_new:     fpga_server:7610 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.844957: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=123200 [ns] vruntime=645015696947 [ns]
+     fpga_server-7464  [001]  5847.844996: sched_switch:         fpga_server:7464 [120] S ==> fpga_server:7580 [120]
+     fpga_server-7548  [000]  5847.844999: sched_waking:         comm=fpga_server pid=7464 prio=120 target_cpu=001
+     fpga_server-7580  [001]  5847.845179: sched_wakeup:         fpga_server:7464 [120]<CANT FIND FIELD success> CPU:001
+     fpga_client-7486  [001]  5847.847687: sched_switch:         fpga_client:7486 [120] S ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.847803: sched_waking:         comm=kworker/u10:0 pid=7424 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.847858: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=187500 [ns] vruntime=645015934421 [ns]
+     fpga_server-7464  [001]  5847.847894: sched_wakeup:         kworker/u10:0:7424 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.847931: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.847972: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=116000 [ns] vruntime=645016050421 [ns]
+     fpga_server-7464  [001]  5847.848006: sched_wakeup:         fpga_server:7610 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.848031: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.848469: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=496100 [ns] vruntime=645016546521 [ns]
+     fpga_server-7464  [001]  5847.848556: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7615
+     fpga_server-7464  [001]  5847.848616: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=147500 [ns] vruntime=645016694021 [ns]
+     fpga_server-7464  [001]  5847.848650: sched_wakeup_new:     fpga_server:7615 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.848763: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.848805: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=189100 [ns] vruntime=645016883121 [ns]
+     fpga_server-7464  [001]  5847.848840: sched_wakeup:         fpga_server:7590 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.848866: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.849138: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.849213: softirq_raise:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.849261: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=452800 [ns] vruntime=645017335921 [ns]
+     fpga_server-7464  [001]  5847.849356: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.849380: softirq_entry:        vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.849409: softirq_exit:         vec=9 [action=RCU]
+     fpga_server-7464  [001]  5847.849611: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=353300 [ns] vruntime=645017689221 [ns]
+     fpga_server-7464  [001]  5847.849698: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7616
+     fpga_server-7464  [001]  5847.849758: sched_stat_runtime:   comm=rcu_sched pid=16 runtime=92500 [ns] vruntime=2705763216716 [ns]
+     fpga_server-7464  [001]  5847.849791: sched_wakeup_new:     fpga_server:7616 [120]<CANT FIND FIELD success> CPU:000
+     fpga_server-7464  [001]  5847.850524: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=910900 [ns] vruntime=645018600121 [ns]
+     fpga_server-7464  [001]  5847.850615: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7617
+     fpga_server-7464  [001]  5847.850675: sched_stat_runtime:   comm=fpga_client pid=7470 runtime=50100 [ns] vruntime=597231175020 [ns]
+     fpga_server-7464  [001]  5847.850708: sched_wakeup_new:     fpga_server:7617 [120]<CANT FIND FIELD success> CPU:003
+     fpga_server-7464  [001]  5847.850760: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=238600 [ns] vruntime=645018838721 [ns]
+     fpga_server-7464  [001]  5847.850799: sched_switch:         fpga_server:7464 [120] R ==> kworker/u10:0:7424 [120]
+   kworker/u10:0-7424  [001]  5847.854922: sched_switch:         kworker/u10:0:7424 [120] W ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.855030: sched_waking:         comm=kworker/u10:0 pid=7424 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.855078: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=179200 [ns] vruntime=645019017921 [ns]
+     fpga_server-7464  [001]  5847.855114: sched_wakeup:         kworker/u10:0:7424 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.855177: sched_switch:         fpga_server:7464 [120] R ==> kworker/u10:0:7424 [120]
+   kworker/u10:0-7424  [001]  5847.855264: sched_switch:         kworker/u10:0:7424 [120] W ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.855587: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=324800 [ns] vruntime=645019342721 [ns]
+     fpga_server-7464  [001]  5847.855679: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7622
+     fpga_server-7464  [001]  5847.855743: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=168900 [ns] vruntime=645019511621 [ns]
+     fpga_server-7464  [001]  5847.855775: sched_wakeup_new:     fpga_server:7622 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.855870: sched_waking:         comm=kworker/u10:0 pid=7424 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.855916: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=173200 [ns] vruntime=645019684821 [ns]
+     fpga_server-7464  [001]  5847.855965: sched_wakeup:         kworker/u10:0:7424 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.856028: sched_switch:         fpga_server:7464 [120] R ==> kworker/u10:0:7424 [120]
+     fpga_server-7622  [001]  5847.860736: sched_switch:         fpga_server:7622 [120] R ==> fpga_server:7464 [120]
+     fpga_server-7464  [001]  5847.860831: sched_waking:         comm=fpga_server pid=7570 prio=120 target_cpu=001
+     fpga_server-7464  [001]  5847.860914: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=421600 [ns] vruntime=645020106421 [ns]
+     fpga_server-7464  [001]  5847.860976: sched_wakeup:         fpga_server:7570 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.861139: irq_handler_entry:    irq=11 name=riscv-timer
+     fpga_server-7464  [001]  5847.861260: softirq_raise:        vec=1 [action=TIMER]
+     fpga_server-7464  [001]  5847.861349: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=435700 [ns] vruntime=645020542121 [ns]
+     fpga_server-7464  [001]  5847.861470: irq_handler_exit:     irq=11 ret=handled
+     fpga_server-7464  [001]  5847.861512: softirq_entry:        vec=1 [action=TIMER]
+     fpga_server-7464  [001]  5847.861563: softirq_exit:         vec=1 [action=TIMER]
+     fpga_server-7464  [001]  5847.862115: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.862195: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=843400 [ns] vruntime=645021385521 [ns]
+     fpga_server-7464  [001]  5847.862256: sched_wakeup:         fpga_server:7603 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.862303: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.862679: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=488700 [ns] vruntime=645021874221 [ns]
+     fpga_server-7464  [001]  5847.862837: sched_process_fork:   comm=fpga_server pid=7464 child_comm=fpga_server child_pid=7625
+     fpga_server-7464  [001]  5847.862966: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=283000 [ns] vruntime=645022157221 [ns]
+     fpga_server-7464  [001]  5847.863025: sched_wakeup_new:     fpga_server:7625 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.863089: irq_handler_entry:    irq=4 name=IPI
+     fpga_server-7464  [001]  5847.863165: sched_stat_runtime:   comm=fpga_server pid=7464 runtime=200700 [ns] vruntime=645022357921 [ns]
+     fpga_server-7464  [001]  5847.863227: sched_wakeup:         fpga_server:7610 [120]<CANT FIND FIELD success> CPU:001
+     fpga_server-7464  [001]  5847.863274: irq_handler_exit:     irq=4 ret=handled
+     fpga_server-7464  [001]  5847.863455: sched_waking:         comm=kworker/u10:0 pid=7424 prio=120 target_cpu=001

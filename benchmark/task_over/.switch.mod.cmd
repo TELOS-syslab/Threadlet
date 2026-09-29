@@ -1,0 +1,1 @@
+savedcmd_/home/qxh/Threadlet-AE/benchmark/task_over/switch.mod := printf '%s\n'   switch.o | awk '!x[$$0]++ { print("/home/qxh/Threadlet-AE/benchmark/task_over/"$$0) }' > /home/qxh/Threadlet-AE/benchmark/task_over/switch.mod

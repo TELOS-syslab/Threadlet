@@ -1,0 +1,970 @@
+Script started on 2026-07-05 20:34:37+08:00 [TERM="xterm-256color" TTY="/dev/pts/264" COLUMNS="158" LINES="22"]
+(base) ]0;qxh@zlr-Z370-HD3: ~/CHIPYARD_TEST/chipyard/generators/rocket-chip[01;32mqxh@zlr-Z370-HD3[00m:[01;34m~/CHIPYARD_TEST/chipyard/generators/rocket-chip[00m$ cd c[Kscripts/
+(base) ]0;qxh@zlr-Z370-HD3: ~/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts[01;32mqxh@zlr-Z370-HD3[00m:[01;34m~/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts[00m$ [K(base) ]0;qxh@zlr-Z370-HD3: ~/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts[01;32mqxh@zlr-Z370-HD3[00m:[01;34m~/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts[00m$ [K(base) ]0;qxh@zlr-Z370-HD3: ~/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts[01;32mqxh@zlr-Z370-HD3[00m:[01;34m~/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts[00m$ [K(base) ]0;qxh@zlr-Z370-HD3: ~/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts[01;32mqxh@zlr-Z370-HD3[00m:[01;34m~/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts[00m$ ./analysis_vivado_threadlet.sh 
+Generating Vivado reports for baseline:
+  build : /home/qxh/CHIPYARD_TEST/chipyard/sims/firesim/deploy/results-build/2026-03-15--03-34-24-linux_4cores_withnewNIC/cl_xilinx_vcu118-firesim-FireSim-FireSimLoopbackNICRocket4GiBDRAMSV484CoreConfig-BaseXilinxVCU118Config/build
+  output: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/run_vivado_reports.tcl
+# set checkpoint_path [lindex $argv 0]
+# set out_dir [lindex $argv 1]
+# file mkdir $out_dir
+# open_checkpoint $checkpoint_path
+Command: open_checkpoint /home/qxh/CHIPYARD_TEST/chipyard/sims/firesim/deploy/results-build/2026-03-15--03-34-24-linux_4cores_withnewNIC/cl_xilinx_vcu118-firesim-FireSim-FireSimLoopbackNICRocket4GiBDRAMSV484CoreConfig-BaseXilinxVCU118Config/build/post_route.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2373.844 ; gain = 2.969 ; free physical = 11404 ; free virtual = 25225
+INFO: [Device 21-403] Loading part xcvu9p-flga2104-2L-e
+Netlist sorting complete. Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3643.680 ; gain = 20.000 ; free physical = 10078 ; free virtual = 23944
+INFO: [Netlist 29-17] Analyzing 44535 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 14 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'partition_wrapper/clk' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'partition_wrapper/ddrs/DDRA/DDR/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/cal_RESET_n[0]' is not directly connected to top level port. Synthesis is ignored for DRIVE but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'partition_wrapper/ddrs/DDRA/DDR/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/cal_RESET_n[0]' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'partition_wrapper/ddrs/DDRA/DDR/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/sys_clk_in' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'partition_wrapper/ddrs/DDRB/DDR/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/cal_RESET_n[0]' is not directly connected to top level port. Synthesis is ignored for DRIVE but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'partition_wrapper/ddrs/DDRB/DDR/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/cal_RESET_n[0]' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'partition_wrapper/ddrs/DDRB/DDR/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/mmcm_clk_in' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Constraints 18-4422] SNAPPING_MODE is set so implementation will use the DERIVED_RANGES which may be different then the GRID_RANGES.
+INFO: [Constraints 18-4421] A LAGUNA range, without usable sites, was added to DERIVED_RANGES for purposes of keeping the Programmable Unit together within the reconfigurable pblock.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 7204.844 ; gain = 891.656 ; free physical = 6892 ; free virtual = 20750
+Restored from archive | CPU: 29.960000 secs | Memory: 757.226959 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 7204.844 ; gain = 891.656 ; free physical = 6887 ; free virtual = 20746
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.2/data/ip'.
+Netlist sorting complete. Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.12 . Memory (MB): peak = 7204.844 ; gain = 0.000 ; free physical = 6885 ; free virtual = 20744
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 17525 instances were transformed.
+  DSP48E1 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 6 instances
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 64 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 1 instance 
+  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 2 instances
+  IOBUFDS => IOBUFDS (DIFFINBUF, IBUFCTRL, INV, OBUFT(x2)): 16 instances
+  IOBUFE3 => IOBUFE3 (IBUFCTRL, INBUF, OBUFT_DCIEN): 144 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 62 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUF(x2)): 2 instances
+  RAM128X1D => RAM128X1D (MUXF7(x2), RAMD64E(x4)): 1 instance 
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 147 instances
+  RAM256X1D => RAM256X1D (MUXF7(x4), MUXF8(x2), RAMD64E(x8)): 8 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 408 instances
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 1380 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 10 instances
+  RAM32X1S => RAM32X1S (RAMS32): 9 instances
+  RAM64M8 => RAM64M8 (RAMD64E(x8)): 13716 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 109 instances
+  RAM64X1S => RAM64X1S (RAMS64E): 1440 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2020.2 (64-bit) build 3064766
+open_checkpoint: Time (s): cpu = 00:03:11 ; elapsed = 00:03:35 . Memory (MB): peak = 7204.844 ; gain = 4839.906 ; free physical = 6877 ; free virtual = 20735
+# proc write_cells {path cells} {
+#   set fh [open $path w]
+#   foreach c $cells {
+#     puts $fh $c
+#   }
+#   close $fh
+# }
+# proc report_optional_cells {label cells util_name power_name} {
+#   global out_dir
+#   set cells [lsort -unique $cells]
+#   write_cells [file join $out_dir "${label}_cells.txt"] $cells
+# 
+#   if {[llength $cells] > 0} {
+#     report_utilization -cells $cells -file [file join $out_dir $util_name]
+# 
+#     # Vivado 2020.2 uses report_power -cell, not report_power -cells.
+#     # Try the aggregate object list first; if the version rejects a list,
+#     # fall back to per-root reports and emit a parser-friendly summed file.
+#     if {[catch {report_power -cell $cells -file [file join $out_dir $power_name]} err]} {
+#       set total_power 0.0
+#       set dynamic_power 0.0
+#       set static_power 0.0
+#       set ok_count 0
+#       set idx 0
+# 
+#       foreach cell $cells {
+#         incr idx
+#         set cell_power_file [file join $out_dir [format "power_%s_cell_%02d.rpt" $label $idx]]
+#         if {[catch {report_power -cell $cell -file $cell_power_file} cell_err]} {
+#           set fh [open $cell_power_file w]
+#           puts $fh "WARNING: report_power -cell failed for $cell"
+#           puts $fh $cell_err
+#           close $fh
+#         } else {
+#           set fh [open $cell_power_file r]
+#           set text [read $fh]
+#           close $fh
+# 
+#           set value 0.0
+#           if {[regexp {\|\s*Total On-Chip Power\s*\(W\)\s*\|\s*([0-9.]+)} $text -> value]} {
+#             set total_power [expr {$total_power + $value}]
+#           }
+#           set has_dynamic [regexp {\|\s*Dynamic\s*\(W\)\s*\|\s*([0-9.]+)} $text -> value]
+#           if {!$has_dynamic} {
+#             set has_dynamic [regexp {\|\s*Total Dynamic Power\s*\(W\)\s*\|\s*([0-9.]+)} $text -> value]
+#           }
+#           if {$has_dynamic} {
+#             set dynamic_power [expr {$dynamic_power + $value}]
+#           }
+#           if {[regexp {\|\s*Device Static\s*\(W\)\s*\|\s*([0-9.]+)} $text -> value]} {
+#             set static_power [expr {$static_power + $value}]
+#           }
+#           incr ok_count
+#         }
+#       }
+# 
+#       set fh [open [file join $out_dir $power_name] w]
+#       if {$ok_count > 0} {
+#         puts $fh "Power Report"
+#         puts $fh ""
+#         puts $fh "+--------------------------+--------------+"
+#         puts $fh [format "| Total On-Chip Power (W)  | %.6f     |" $total_power]
+#         puts $fh [format "| Total Dynamic Power (W)  | %.6f     |" $dynamic_power]
+#         puts $fh [format "| Device Static (W)        | %.6f     |" $static_power]
+#         puts $fh "+--------------------------+--------------+"
+#         puts $fh ""
+#         puts $fh "NOTE: Summed from $ok_count non-overlapping root-cell report_power -cell reports."
+#         puts $fh "Original aggregate report_power -cell object-list error:"
+#         puts $fh $err
+#       } else {
+#         puts $fh "WARNING: report_power -cell failed for all $label cells."
+#         puts $fh "Original aggregate report_power -cell object-list error:"
+#         puts $fh $err
+#       }
+#       close $fh
+#     }
+#   } else {
+#     set fh [open [file join $out_dir $util_name] w]
+#     puts $fh "WARNING: No cells matched for $label."
+#     close $fh
+# 
+#     set fh [open [file join $out_dir $power_name] w]
+#     puts $fh "WARNING: No cells matched for $label."
+#     close $fh
+#   }
+# }
+# proc report_optional_cells_hier {label cells util_name} {
+#   global out_dir
+#   set cells [lsort -unique $cells]
+#   write_cells [file join $out_dir "${label}_cells.txt"] $cells
+# 
+#   if {[llength $cells] > 0} {
+#     if {[catch {report_utilization -hierarchical -hierarchical_depth 10 -cells $cells -file [file join $out_dir $util_name]} err]} {
+#       set fh [open [file join $out_dir $util_name] w]
+#       puts $fh "WARNING: hierarchical report_utilization failed for $label."
+#       puts $fh $err
+#       close $fh
+#     }
+#   } else {
+#     set fh [open [file join $out_dir $util_name] w]
+#     puts $fh "WARNING: No cells matched for $label."
+#     close $fh
+#   }
+# }
+# proc prune_descendants {cells} {
+#   # report_utilization -cells double counts when a cell list contains both a
+#   # cell and one of its descendants; keep only the hierarchy roots. Relies on
+#   # lexicographic order placing "x" before "x/..." before any sibling "x0...".
+#   set sorted [lsort -unique $cells]
+#   set result {}
+#   set last ""
+#   foreach c $sorted {
+#     if {$last ne "" && [string first "$last/" $c] == 0} {
+#       continue
+#     }
+#     lappend result $c
+#     set last $c
+#   }
+#   return $result
+# }
+# proc collect_cells_by_patterns {patterns} {
+#   set cells {}
+#   foreach pattern $patterns {
+#     set cells [concat $cells [get_cells -hier -quiet -filter "NAME =~ $pattern"]]
+#   }
+#   return [prune_descendants $cells]
+# }
+# proc report_rf_fingerprint {} {
+#   # Report-level evidence for the Phase 3.3 fingerprint: whether the integer
+#   # RF is implemented as LUTRAM (RAMD/RAMS/RAM*M refs) or as flip-flops (FDRE).
+#   global out_dir
+#   set rf_cells [get_cells -hier -quiet -filter {NAME =~ *element_reset_domain_rockettile/core/rf_reg*}]
+#   set fh [open [file join $out_dir rf_fingerprint.rpt] w]
+#   puts $fh "Integer RF implementation fingerprint (cells matching core/rf_reg*)"
+#   puts $fh "Matched cells (incl. macro children): [llength $rf_cells]"
+#   puts $fh ""
+#   set counts [dict create]
+#   foreach c $rf_cells {
+#     set ref [get_property -quiet REF_NAME $c]
+#     if {$ref eq ""} { set ref UNKNOWN }
+#     dict incr counts $ref
+#   }
+#   puts $fh [format "%-24s %10s" "REF_NAME" "count"]
+#   foreach ref [lsort [dict keys $counts]] {
+#     puts $fh [format "%-24s %10d" $ref [dict get $counts $ref]]
+#   }
+#   puts $fh ""
+#   puts $fh "LUTRAM implementation shows RAMD32/RAMD64E/RAMS32/RAM*M refs."
+#   puts $fh "FF implementation shows FDRE/FDSE refs (Phase 3.3 regression)."
+#   close $fh
+# }
+# proc try_report {cmd path} {
+#   set err ""
+#   if {[catch {uplevel 1 $cmd} err]} {
+#     set fh [open $path w]
+#     puts $fh "WARNING: Vivado report command failed."
+#     puts $fh $err
+#     close $fh
+#   }
+# }
+# report_timing_summary -warn_on_violation -file [file join $out_dir timing_summary_post_route.rpt]
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2L, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+WARNING: [Timing 38-453] Line(s) in the report have been truncated to keep line length below 5000 characters.
+report_timing_summary: Time (s): cpu = 00:05:01 ; elapsed = 00:01:03 . Memory (MB): peak = 8748.785 ; gain = 1543.941 ; free physical = 5602 ; free virtual = 19463
+# report_utilization -file [file join $out_dir utilization_post_route.rpt]
+report_utilization: Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 8748.785 ; gain = 0.000 ; free physical = 5580 ; free virtual = 19441
+# report_utilization -hierarchical -hierarchical_depth 10 -file [file join $out_dir utilization_hier_post_route.rpt]
+report_utilization: Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 8748.785 ; gain = 0.000 ; free physical = 5561 ; free virtual = 19423
+# report_power -file [file join $out_dir power_post_route_vectorless.rpt]
+Command: report_power -file /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/power_post_route_vectorless.rpt
+INFO: [Power 33-23] Power model is not available for xiphy_riu_or
+INFO: [Power 33-23] Power model is not available for genVref.u_hpio_vref
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+2 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:04:46 ; elapsed = 00:01:16 . Memory (MB): peak = 9576.699 ; gain = 827.914 ; free physical = 5175 ; free virtual = 19037
+# report_power -hier all -file [file join $out_dir power_hier_post_route_vectorless.rpt]
+Command: report_power -hier all -file /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/power_hier_post_route_vectorless.rpt
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+0 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:02:40 ; elapsed = 00:00:55 . Memory (MB): peak = 9604.695 ; gain = 27.996 ; free physical = 5184 ; free virtual = 19047
+# report_clock_utilization -file [file join $out_dir clock_utilization_post_route.rpt]
+report_clock_utilization: Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 9604.695 ; gain = 0.000 ; free physical = 4788 ; free virtual = 18662
+# report_route_status -file [file join $out_dir route_status_post_route.rpt]
+# report_drc -file [file join $out_dir drc_post_route.rpt]
+Command: report_drc -file /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/drc_post_route.rpt
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/drc_post_route.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:02:57 ; elapsed = 00:00:51 . Memory (MB): peak = 10823.328 ; gain = 1218.633 ; free physical = 4594 ; free virtual = 18468
+# try_report {report_high_fanout_nets -file [file join $out_dir high_fanout_nets_post_route.rpt]} \
+#   [file join $out_dir high_fanout_nets_post_route.rpt]
+report_high_fanout_nets: Time (s): cpu = 00:00:52 ; elapsed = 00:00:52 . Memory (MB): peak = 10823.328 ; gain = 0.000 ; free physical = 4580 ; free virtual = 18454
+report_high_fanout_nets: Time (s): cpu = 00:00:52 ; elapsed = 00:00:52 . Memory (MB): peak = 10823.328 ; gain = 0.000 ; free physical = 4580 ; free virtual = 18454
+# set rocket_tile_cells [get_cells -hier -quiet -filter {NAME =~ *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile}]
+# set rocket_core_cells [get_cells -hier -quiet -filter {NAME =~ *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core}]
+# report_optional_cells rockettile $rocket_tile_cells utilization_rockettile_only.rpt power_rockettile_only.rpt
+report_utilization: Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 10823.328 ; gain = 0.000 ; free physical = 4547 ; free virtual = 18422
+# report_optional_cells rocketcore $rocket_core_cells utilization_rocketcore_only.rpt power_rocketcore_only.rpt
+report_utilization: Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 10823.328 ; gain = 0.000 ; free physical = 4556 ; free virtual = 18432
+# report_optional_cells_hier rocketcore_hier $rocket_core_cells utilization_rocketcore_hier.rpt
+report_utilization: Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 10823.328 ; gain = 0.000 ; free physical = 4561 ; free virtual = 18437
+# set threadmanager_cells [get_cells -hier -quiet -filter {NAME =~ *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/tm}]
+# report_optional_cells threadmanager $threadmanager_cells utilization_threadmanager_only.rpt power_threadmanager_only.rpt
+# report_optional_cells_hier threadmanager_hier $threadmanager_cells utilization_threadmanager_hier.rpt
+# set threadcontextmanager_cells [get_cells -hier -quiet -filter {NAME =~ *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/threadCtxMgr}]
+# report_optional_cells threadcontextmanager $threadcontextmanager_cells utilization_threadcontextmanager_only.rpt power_threadcontextmanager_only.rpt
+# set threadcontextsaver_cells [get_cells -hier -quiet -filter {NAME =~ *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/threadCtxSaver}]
+# report_optional_cells threadcontextsaver $threadcontextsaver_cells utilization_threadcontextsaver_only.rpt power_threadcontextsaver_only.rpt
+# set threadcontextdmemarbiter_cells [get_cells -hier -quiet -filter {NAME =~ *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/threadCtxDmemArb}]
+# report_optional_cells threadcontextdmemarbiter $threadcontextdmemarbiter_cells utilization_threadcontextdmemarbiter_only.rpt power_threadcontextdmemarbiter_only.rpt
+# set threadlet_cells [collect_cells_by_patterns {
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/tm
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/threadCtxMgr
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/threadCtxSaver
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/threadCtxDmemArb
+# }]
+# report_optional_cells threadlet_logic $threadlet_cells utilization_threadlet_logic_only.rpt power_threadlet_logic_only.rpt
+# report_optional_cells_hier threadlet_logic_hier $threadlet_cells utilization_threadlet_logic_hier.rpt
+# set threadlet_sram_like_cells [collect_cells_by_patterns {
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/rf_reg*
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/tm/*tptPriorityMem*
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/tm/*tptSliceMem*
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/tm/*tptDeadlineMem*
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/tm/*coldPcBanks*
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/tm/*monitorLineBanks*
+# }]
+# report_optional_cells threadlet_sram_like $threadlet_sram_like_cells utilization_threadlet_sram_like_only.rpt power_threadlet_sram_like_only.rpt
+report_utilization: Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 10823.328 ; gain = 0.000 ; free physical = 4537 ; free virtual = 18414
+# report_rf_fingerprint
+# set synthesized_printf_cells [collect_cells_by_patterns {
+#   *synthesizedPrintf*
+#   *SynthesizePrintf*
+#   *PrintBridge*
+#   *printf*
+# }]
+# report_optional_cells synthesized_printf $synthesized_printf_cells utilization_synthesized_printf_only.rpt power_synthesized_printf_only.rpt
+# set synthesized_assert_cells [collect_cells_by_patterns {
+#   *assert*
+#   *Assert*
+# }]
+# report_optional_cells synthesized_assert $synthesized_assert_cells utilization_synthesized_assert_only.rpt power_synthesized_assert_only.rpt
+# close_project
+close_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 10823.328 ; gain = 0.000 ; free physical = 9295 ; free virtual = 23171
+# exit
+INFO: [Common 17-206] Exiting Vivado at Sun Jul  5 20:48:11 2026...
+Generating Vivado reports for threadlet:
+  build : /home/qxh/CHIPYARD_TEST/chipyard/sims/firesim/deploy/results-build/2026-07-05--03-11-10-threadlet_sosploom3_7_noprint/cl_xilinx_vcu118-firesim-FireSim-FireSimLoopbackNICRocket4GiBDRAMSV484CoreConfig-BaseXilinxVCU118Config/build
+  output: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/run_vivado_reports.tcl
+# set checkpoint_path [lindex $argv 0]
+# set out_dir [lindex $argv 1]
+# file mkdir $out_dir
+# open_checkpoint $checkpoint_path
+Command: open_checkpoint /home/qxh/CHIPYARD_TEST/chipyard/sims/firesim/deploy/results-build/2026-07-05--03-11-10-threadlet_sosploom3_7_noprint/cl_xilinx_vcu118-firesim-FireSim-FireSimLoopbackNICRocket4GiBDRAMSV484CoreConfig-BaseXilinxVCU118Config/build/post_route.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2373.848 ; gain = 5.938 ; free physical = 11363 ; free virtual = 25240
+INFO: [Device 21-403] Loading part xcvu9p-flga2104-2L-e
+Netlist sorting complete. Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3748.621 ; gain = 21.000 ; free physical = 9980 ; free virtual = 23858
+INFO: [Netlist 29-17] Analyzing 48415 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 14 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'partition_wrapper/clk' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'partition_wrapper/ddrs/DDRA/DDR/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/cal_RESET_n[0]' is not directly connected to top level port. Synthesis is ignored for DRIVE but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'partition_wrapper/ddrs/DDRA/DDR/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/cal_RESET_n[0]' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'partition_wrapper/ddrs/DDRA/DDR/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/sys_clk_in' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'partition_wrapper/ddrs/DDRB/DDR/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/cal_RESET_n[0]' is not directly connected to top level port. Synthesis is ignored for DRIVE but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'partition_wrapper/ddrs/DDRB/DDR/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/cal_RESET_n[0]' is not directly connected to top level port. Synthesis is ignored for SLEW but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'partition_wrapper/ddrs/DDRB/DDR/inst/u_ddr4_mem_intfc/u_mig_ddr4_phy/mmcm_clk_in' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Constraints 18-4422] SNAPPING_MODE is set so implementation will use the DERIVED_RANGES which may be different then the GRID_RANGES.
+INFO: [Constraints 18-4421] A LAGUNA range, without usable sites, was added to DERIVED_RANGES for purposes of keeping the Programmable Unit together within the reconfigurable pblock.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 7625.059 ; gain = 963.961 ; free physical = 6444 ; free virtual = 20324
+Restored from archive | CPU: 34.810000 secs | Memory: 874.329117 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 7625.059 ; gain = 963.961 ; free physical = 6439 ; free virtual = 20319
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.2/data/ip'.
+Netlist sorting complete. Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.14 . Memory (MB): peak = 7625.059 ; gain = 0.000 ; free physical = 6451 ; free virtual = 20330
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 18333 instances were transformed.
+  DSP48E1 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 6 instances
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 64 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 1 instance 
+  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 2 instances
+  IOBUFDS => IOBUFDS (DIFFINBUF, IBUFCTRL, INV, OBUFT(x2)): 16 instances
+  IOBUFE3 => IOBUFE3 (IBUFCTRL, INBUF, OBUFT_DCIEN): 144 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 62 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUF(x2)): 2 instances
+  RAM128X1D => RAM128X1D (MUXF7(x2), RAMD64E(x4)): 1 instance 
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 147 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 408 instances
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 1460 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 10 instances
+  RAM32X1S => RAM32X1S (RAMS32): 9 instances
+  RAM64M8 => RAM64M8 (RAMD64E(x8)): 14404 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 157 instances
+  RAM64X1S => RAM64X1S (RAMS64E): 1440 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2020.2 (64-bit) build 3064766
+open_checkpoint: Time (s): cpu = 00:03:30 ; elapsed = 00:03:56 . Memory (MB): peak = 7625.059 ; gain = 5260.117 ; free physical = 6441 ; free virtual = 20321
+# proc write_cells {path cells} {
+#   set fh [open $path w]
+#   foreach c $cells {
+#     puts $fh $c
+#   }
+#   close $fh
+# }
+# proc report_optional_cells {label cells util_name power_name} {
+#   global out_dir
+#   set cells [lsort -unique $cells]
+#   write_cells [file join $out_dir "${label}_cells.txt"] $cells
+# 
+#   if {[llength $cells] > 0} {
+#     report_utilization -cells $cells -file [file join $out_dir $util_name]
+# 
+#     # Vivado 2020.2 uses report_power -cell, not report_power -cells.
+#     # Try the aggregate object list first; if the version rejects a list,
+#     # fall back to per-root reports and emit a parser-friendly summed file.
+#     if {[catch {report_power -cell $cells -file [file join $out_dir $power_name]} err]} {
+#       set total_power 0.0
+#       set dynamic_power 0.0
+#       set static_power 0.0
+#       set ok_count 0
+#       set idx 0
+# 
+#       foreach cell $cells {
+#         incr idx
+#         set cell_power_file [file join $out_dir [format "power_%s_cell_%02d.rpt" $label $idx]]
+#         if {[catch {report_power -cell $cell -file $cell_power_file} cell_err]} {
+#           set fh [open $cell_power_file w]
+#           puts $fh "WARNING: report_power -cell failed for $cell"
+#           puts $fh $cell_err
+#           close $fh
+#         } else {
+#           set fh [open $cell_power_file r]
+#           set text [read $fh]
+#           close $fh
+# 
+#           set value 0.0
+#           if {[regexp {\|\s*Total On-Chip Power\s*\(W\)\s*\|\s*([0-9.]+)} $text -> value]} {
+#             set total_power [expr {$total_power + $value}]
+#           }
+#           set has_dynamic [regexp {\|\s*Dynamic\s*\(W\)\s*\|\s*([0-9.]+)} $text -> value]
+#           if {!$has_dynamic} {
+#             set has_dynamic [regexp {\|\s*Total Dynamic Power\s*\(W\)\s*\|\s*([0-9.]+)} $text -> value]
+#           }
+#           if {$has_dynamic} {
+#             set dynamic_power [expr {$dynamic_power + $value}]
+#           }
+#           if {[regexp {\|\s*Device Static\s*\(W\)\s*\|\s*([0-9.]+)} $text -> value]} {
+#             set static_power [expr {$static_power + $value}]
+#           }
+#           incr ok_count
+#         }
+#       }
+# 
+#       set fh [open [file join $out_dir $power_name] w]
+#       if {$ok_count > 0} {
+#         puts $fh "Power Report"
+#         puts $fh ""
+#         puts $fh "+--------------------------+--------------+"
+#         puts $fh [format "| Total On-Chip Power (W)  | %.6f     |" $total_power]
+#         puts $fh [format "| Total Dynamic Power (W)  | %.6f     |" $dynamic_power]
+#         puts $fh [format "| Device Static (W)        | %.6f     |" $static_power]
+#         puts $fh "+--------------------------+--------------+"
+#         puts $fh ""
+#         puts $fh "NOTE: Summed from $ok_count non-overlapping root-cell report_power -cell reports."
+#         puts $fh "Original aggregate report_power -cell object-list error:"
+#         puts $fh $err
+#       } else {
+#         puts $fh "WARNING: report_power -cell failed for all $label cells."
+#         puts $fh "Original aggregate report_power -cell object-list error:"
+#         puts $fh $err
+#       }
+#       close $fh
+#     }
+#   } else {
+#     set fh [open [file join $out_dir $util_name] w]
+#     puts $fh "WARNING: No cells matched for $label."
+#     close $fh
+# 
+#     set fh [open [file join $out_dir $power_name] w]
+#     puts $fh "WARNING: No cells matched for $label."
+#     close $fh
+#   }
+# }
+# proc report_optional_cells_hier {label cells util_name} {
+#   global out_dir
+#   set cells [lsort -unique $cells]
+#   write_cells [file join $out_dir "${label}_cells.txt"] $cells
+# 
+#   if {[llength $cells] > 0} {
+#     if {[catch {report_utilization -hierarchical -hierarchical_depth 10 -cells $cells -file [file join $out_dir $util_name]} err]} {
+#       set fh [open [file join $out_dir $util_name] w]
+#       puts $fh "WARNING: hierarchical report_utilization failed for $label."
+#       puts $fh $err
+#       close $fh
+#     }
+#   } else {
+#     set fh [open [file join $out_dir $util_name] w]
+#     puts $fh "WARNING: No cells matched for $label."
+#     close $fh
+#   }
+# }
+# proc prune_descendants {cells} {
+#   # report_utilization -cells double counts when a cell list contains both a
+#   # cell and one of its descendants; keep only the hierarchy roots. Relies on
+#   # lexicographic order placing "x" before "x/..." before any sibling "x0...".
+#   set sorted [lsort -unique $cells]
+#   set result {}
+#   set last ""
+#   foreach c $sorted {
+#     if {$last ne "" && [string first "$last/" $c] == 0} {
+#       continue
+#     }
+#     lappend result $c
+#     set last $c
+#   }
+#   return $result
+# }
+# proc collect_cells_by_patterns {patterns} {
+#   set cells {}
+#   foreach pattern $patterns {
+#     set cells [concat $cells [get_cells -hier -quiet -filter "NAME =~ $pattern"]]
+#   }
+#   return [prune_descendants $cells]
+# }
+# proc report_rf_fingerprint {} {
+#   # Report-level evidence for the Phase 3.3 fingerprint: whether the integer
+#   # RF is implemented as LUTRAM (RAMD/RAMS/RAM*M refs) or as flip-flops (FDRE).
+#   global out_dir
+#   set rf_cells [get_cells -hier -quiet -filter {NAME =~ *element_reset_domain_rockettile/core/rf_reg*}]
+#   set fh [open [file join $out_dir rf_fingerprint.rpt] w]
+#   puts $fh "Integer RF implementation fingerprint (cells matching core/rf_reg*)"
+#   puts $fh "Matched cells (incl. macro children): [llength $rf_cells]"
+#   puts $fh ""
+#   set counts [dict create]
+#   foreach c $rf_cells {
+#     set ref [get_property -quiet REF_NAME $c]
+#     if {$ref eq ""} { set ref UNKNOWN }
+#     dict incr counts $ref
+#   }
+#   puts $fh [format "%-24s %10s" "REF_NAME" "count"]
+#   foreach ref [lsort [dict keys $counts]] {
+#     puts $fh [format "%-24s %10d" $ref [dict get $counts $ref]]
+#   }
+#   puts $fh ""
+#   puts $fh "LUTRAM implementation shows RAMD32/RAMD64E/RAMS32/RAM*M refs."
+#   puts $fh "FF implementation shows FDRE/FDSE refs (Phase 3.3 regression)."
+#   close $fh
+# }
+# proc try_report {cmd path} {
+#   set err ""
+#   if {[catch {uplevel 1 $cmd} err]} {
+#     set fh [open $path w]
+#     puts $fh "WARNING: Vivado report command failed."
+#     puts $fh $err
+#     close $fh
+#   }
+# }
+# report_timing_summary -warn_on_violation -file [file join $out_dir timing_summary_post_route.rpt]
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2L, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+WARNING: [Timing 38-453] Line(s) in the report have been truncated to keep line length below 5000 characters.
+report_timing_summary: Time (s): cpu = 00:05:45 ; elapsed = 00:01:12 . Memory (MB): peak = 9401.805 ; gain = 1776.746 ; free physical = 4918 ; free virtual = 18800
+# report_utilization -file [file join $out_dir utilization_post_route.rpt]
+report_utilization: Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 9401.805 ; gain = 0.000 ; free physical = 4890 ; free virtual = 18773
+# report_utilization -hierarchical -hierarchical_depth 10 -file [file join $out_dir utilization_hier_post_route.rpt]
+report_utilization: Time (s): cpu = 00:00:51 ; elapsed = 00:00:51 . Memory (MB): peak = 9401.805 ; gain = 0.000 ; free physical = 4873 ; free virtual = 18756
+# report_power -file [file join $out_dir power_post_route_vectorless.rpt]
+Command: report_power -file /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/power_post_route_vectorless.rpt
+INFO: [Power 33-23] Power model is not available for xiphy_riu_or
+INFO: [Power 33-23] Power model is not available for genVref.u_hpio_vref
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+2 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:05:45 ; elapsed = 00:01:35 . Memory (MB): peak = 10363.008 ; gain = 961.203 ; free physical = 4448 ; free virtual = 18332
+# report_power -hier all -file [file join $out_dir power_hier_post_route_vectorless.rpt]
+Command: report_power -hier all -file /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/power_hier_post_route_vectorless.rpt
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+0 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:03:15 ; elapsed = 00:01:14 . Memory (MB): peak = 10363.008 ; gain = 0.000 ; free physical = 4450 ; free virtual = 18332
+# report_clock_utilization -file [file join $out_dir clock_utilization_post_route.rpt]
+report_clock_utilization: Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 10363.008 ; gain = 0.000 ; free physical = 4037 ; free virtual = 17921
+# report_route_status -file [file join $out_dir route_status_post_route.rpt]
+# report_drc -file [file join $out_dir drc_post_route.rpt]
+Command: report_drc -file /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/drc_post_route.rpt
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/drc_post_route.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:03:16 ; elapsed = 00:00:57 . Memory (MB): peak = 11753.215 ; gain = 1390.207 ; free physical = 3840 ; free virtual = 17724
+# try_report {report_high_fanout_nets -file [file join $out_dir high_fanout_nets_post_route.rpt]} \
+#   [file join $out_dir high_fanout_nets_post_route.rpt]
+report_high_fanout_nets: Time (s): cpu = 00:01:01 ; elapsed = 00:01:01 . Memory (MB): peak = 11753.215 ; gain = 0.000 ; free physical = 3824 ; free virtual = 17709
+report_high_fanout_nets: Time (s): cpu = 00:01:01 ; elapsed = 00:01:01 . Memory (MB): peak = 11753.215 ; gain = 0.000 ; free physical = 3824 ; free virtual = 17709
+# set rocket_tile_cells [get_cells -hier -quiet -filter {NAME =~ *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile}]
+# set rocket_core_cells [get_cells -hier -quiet -filter {NAME =~ *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core}]
+# report_optional_cells rockettile $rocket_tile_cells utilization_rockettile_only.rpt power_rockettile_only.rpt
+report_utilization: Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 11753.215 ; gain = 0.000 ; free physical = 3789 ; free virtual = 17674
+# report_optional_cells rocketcore $rocket_core_cells utilization_rocketcore_only.rpt power_rocketcore_only.rpt
+report_utilization: Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 11753.215 ; gain = 0.000 ; free physical = 3786 ; free virtual = 17671
+# report_optional_cells_hier rocketcore_hier $rocket_core_cells utilization_rocketcore_hier.rpt
+report_utilization: Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 11753.215 ; gain = 0.000 ; free physical = 3794 ; free virtual = 17679
+# set threadmanager_cells [get_cells -hier -quiet -filter {NAME =~ *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/tm}]
+# report_optional_cells threadmanager $threadmanager_cells utilization_threadmanager_only.rpt power_threadmanager_only.rpt
+report_utilization: Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 11753.215 ; gain = 0.000 ; free physical = 3782 ; free virtual = 17668
+# report_optional_cells_hier threadmanager_hier $threadmanager_cells utilization_threadmanager_hier.rpt
+report_utilization: Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 11753.215 ; gain = 0.000 ; free physical = 3783 ; free virtual = 17669
+# set threadcontextmanager_cells [get_cells -hier -quiet -filter {NAME =~ *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/threadCtxMgr}]
+# report_optional_cells threadcontextmanager $threadcontextmanager_cells utilization_threadcontextmanager_only.rpt power_threadcontextmanager_only.rpt
+report_utilization: Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 11753.215 ; gain = 0.000 ; free physical = 3783 ; free virtual = 17669
+# set threadcontextsaver_cells [get_cells -hier -quiet -filter {NAME =~ *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/threadCtxSaver}]
+# report_optional_cells threadcontextsaver $threadcontextsaver_cells utilization_threadcontextsaver_only.rpt power_threadcontextsaver_only.rpt
+report_utilization: Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 11753.215 ; gain = 0.000 ; free physical = 3741 ; free virtual = 17627
+# set threadcontextdmemarbiter_cells [get_cells -hier -quiet -filter {NAME =~ *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/threadCtxDmemArb}]
+# report_optional_cells threadcontextdmemarbiter $threadcontextdmemarbiter_cells utilization_threadcontextdmemarbiter_only.rpt power_threadcontextdmemarbiter_only.rpt
+report_utilization: Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 11753.215 ; gain = 0.000 ; free physical = 3757 ; free virtual = 17643
+# set threadlet_cells [collect_cells_by_patterns {
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/tm
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/threadCtxMgr
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/threadCtxSaver
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/threadCtxDmemArb
+# }]
+# report_optional_cells threadlet_logic $threadlet_cells utilization_threadlet_logic_only.rpt power_threadlet_logic_only.rpt
+report_utilization: Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 11753.215 ; gain = 0.000 ; free physical = 3775 ; free virtual = 17662
+# report_optional_cells_hier threadlet_logic_hier $threadlet_cells utilization_threadlet_logic_hier.rpt
+report_utilization: Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 11753.215 ; gain = 0.000 ; free physical = 3781 ; free virtual = 17668
+# set threadlet_sram_like_cells [collect_cells_by_patterns {
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/rf_reg*
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/tm/*tptPriorityMem*
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/tm/*tptSliceMem*
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/tm/*tptDeadlineMem*
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/tm/*coldPcBanks*
+#   *chiptop0/system/tile_prci_domain*/element_reset_domain_rockettile/core/tm/*monitorLineBanks*
+# }]
+# report_optional_cells threadlet_sram_like $threadlet_sram_like_cells utilization_threadlet_sram_like_only.rpt power_threadlet_sram_like_only.rpt
+report_utilization: Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 11753.215 ; gain = 0.000 ; free physical = 3725 ; free virtual = 17617
+# report_rf_fingerprint
+# set synthesized_printf_cells [collect_cells_by_patterns {
+#   *synthesizedPrintf*
+#   *SynthesizePrintf*
+#   *PrintBridge*
+#   *printf*
+# }]
+# report_optional_cells synthesized_printf $synthesized_printf_cells utilization_synthesized_printf_only.rpt power_synthesized_printf_only.rpt
+# set synthesized_assert_cells [collect_cells_by_patterns {
+#   *assert*
+#   *Assert*
+# }]
+# report_optional_cells synthesized_assert $synthesized_assert_cells utilization_synthesized_assert_only.rpt power_synthesized_assert_only.rpt
+# close_project
+close_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 11753.215 ; gain = 0.000 ; free physical = 9044 ; free virtual = 22965
+# exit
+INFO: [Common 17-206] Exiting Vivado at Sun Jul  5 21:05:51 2026...
+Threadlet vs Baseline Vivado Report
+===================================
+
+baseline build flavor : no-print
+threadlet build flavor: no-print
+
+[Full Chip]
+-----------
+baseline utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/utilization_post_route.rpt
+threadlet utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/utilization_post_route.rpt
+baseline power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/power_post_route_vectorless.rpt
+threadlet power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/power_post_route_vectorless.rpt
+
+Area Delta
+----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+LUT                              388239         474324         +86085    +22.17%
+FF                               192400         206831         +14431     +7.50%
+BRAM Tile                           460            464             +4     +0.87%
+URAM                                  1              1             +0     +0.00%
+DSP                                  70             70             +0     +0.00%
+LUT as Logic                     261738         341631         +79893    +30.52%
+LUT as Memory                    126501         132693          +6192     +4.89%
+RAMB36                              280            280             +0     +0.00%
+RAMB18                              360            368             +8     +2.22%
+MUXF7                             18344          20247          +1903    +10.37%
+MUXF8                              5603           5896           +293     +5.23%
+
+Power Delta
+-----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+Total On-Chip Power              13.590         13.142         -0.448     -3.30%
+Total Dynamic Power              10.883         10.443         -0.440     -4.04%
+Device Static Power               2.708          2.699         -0.009     -0.33%
+
+[Rocket Core]
+-------------
+baseline utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/utilization_rocketcore_only.rpt
+threadlet utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/utilization_rocketcore_only.rpt
+baseline power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/power_rocketcore_only.rpt
+threadlet power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/power_rocketcore_only.rpt
+
+Area Delta
+----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+LUT                               26805         118806         +92001   +343.22%
+FF                                 8724          29718         +20994   +240.65%
+BRAM Tile                             0              4             +4        N/A
+URAM                                  0              0             +0        N/A
+DSP                                  16             16             +0     +0.00%
+LUT as Logic                      26485         112230         +85745   +323.75%
+LUT as Memory                       320           6576          +6256  +1955.00%
+RAMB36                                0              0             +0        N/A
+RAMB18                                0              8             +8        N/A
+MUXF7                               416           2460          +2044   +491.35%
+MUXF8                                24            448           +424  +1766.67%
+
+Power Delta
+-----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+Total On-Chip Power                 N/A            N/A            N/A        N/A
+Total Dynamic Power                 N/A            N/A            N/A        N/A
+Device Static Power                 N/A            N/A            N/A        N/A
+
+[ThreadManager]
+---------------
+baseline utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/utilization_threadmanager_only.rpt
+threadlet utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/utilization_threadmanager_only.rpt
+baseline power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/power_threadmanager_only.rpt
+threadlet power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/power_threadmanager_only.rpt
+
+Area Delta
+----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+LUT                                 N/A          39685            N/A        N/A
+FF                                  N/A          10048            N/A        N/A
+BRAM Tile                           N/A              4            N/A        N/A
+URAM                                N/A              0            N/A        N/A
+DSP                                 N/A              0            N/A        N/A
+LUT as Logic                        N/A          36869            N/A        N/A
+LUT as Memory                       N/A           2816            N/A        N/A
+RAMB36                              N/A              0            N/A        N/A
+RAMB18                              N/A              8            N/A        N/A
+MUXF7                               N/A           1200            N/A        N/A
+MUXF8                               N/A            148            N/A        N/A
+
+Power Delta
+-----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+Total On-Chip Power                 N/A            N/A            N/A        N/A
+Total Dynamic Power                 N/A            N/A            N/A        N/A
+Device Static Power                 N/A            N/A            N/A        N/A
+
+[Threadlet Logic]
+-----------------
+baseline utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/utilization_threadlet_logic_only.rpt
+threadlet utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/utilization_threadlet_logic_only.rpt
+baseline power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/power_threadlet_logic_only.rpt
+threadlet power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/power_threadlet_logic_only.rpt
+
+Area Delta
+----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+LUT                                 N/A          95800            N/A        N/A
+FF                                  N/A          19682            N/A        N/A
+BRAM Tile                           N/A              4            N/A        N/A
+URAM                                N/A              0            N/A        N/A
+DSP                                 N/A              0            N/A        N/A
+LUT as Logic                        N/A          92792            N/A        N/A
+LUT as Memory                       N/A           3008            N/A        N/A
+RAMB36                              N/A              0            N/A        N/A
+RAMB18                              N/A              8            N/A        N/A
+MUXF7                               N/A           2172            N/A        N/A
+MUXF8                               N/A            432            N/A        N/A
+
+Power Delta
+-----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+Total On-Chip Power                 N/A            N/A            N/A        N/A
+Total Dynamic Power                 N/A            N/A            N/A        N/A
+Device Static Power                 N/A            N/A            N/A        N/A
+
+[ThreadContextManager]
+----------------------
+baseline utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/utilization_threadcontextmanager_only.rpt
+threadlet utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/utilization_threadcontextmanager_only.rpt
+baseline power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/power_threadcontextmanager_only.rpt
+threadlet power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/power_threadcontextmanager_only.rpt
+
+Area Delta
+----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+LUT                                 N/A          51241            N/A        N/A
+FF                                  N/A           5720            N/A        N/A
+BRAM Tile                           N/A              0            N/A        N/A
+URAM                                N/A              0            N/A        N/A
+DSP                                 N/A              0            N/A        N/A
+LUT as Logic                        N/A          51241            N/A        N/A
+LUT as Memory                       N/A              0            N/A        N/A
+RAMB36                              N/A              0            N/A        N/A
+RAMB18                              N/A              0            N/A        N/A
+MUXF7                               N/A            812            N/A        N/A
+MUXF8                               N/A            284            N/A        N/A
+
+Power Delta
+-----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+Total On-Chip Power                 N/A            N/A            N/A        N/A
+Total Dynamic Power                 N/A            N/A            N/A        N/A
+Device Static Power                 N/A            N/A            N/A        N/A
+
+[ThreadContextSaver]
+--------------------
+baseline utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/utilization_threadcontextsaver_only.rpt
+threadlet utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/utilization_threadcontextsaver_only.rpt
+baseline power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/power_threadcontextsaver_only.rpt
+threadlet power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/power_threadcontextsaver_only.rpt
+
+Area Delta
+----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+LUT                                 N/A           3735            N/A        N/A
+FF                                  N/A           3906            N/A        N/A
+BRAM Tile                           N/A              0            N/A        N/A
+URAM                                N/A              0            N/A        N/A
+DSP                                 N/A              0            N/A        N/A
+LUT as Logic                        N/A           3543            N/A        N/A
+LUT as Memory                       N/A            192            N/A        N/A
+RAMB36                              N/A              0            N/A        N/A
+RAMB18                              N/A              0            N/A        N/A
+MUXF7                               N/A            160            N/A        N/A
+MUXF8                               N/A              0            N/A        N/A
+
+Power Delta
+-----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+Total On-Chip Power                 N/A            N/A            N/A        N/A
+Total Dynamic Power                 N/A            N/A            N/A        N/A
+Device Static Power                 N/A            N/A            N/A        N/A
+
+[ThreadContextDmemArbiter]
+--------------------------
+baseline utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/utilization_threadcontextdmemarbiter_only.rpt
+threadlet utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/utilization_threadcontextdmemarbiter_only.rpt
+baseline power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/power_threadcontextdmemarbiter_only.rpt
+threadlet power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/power_threadcontextdmemarbiter_only.rpt
+
+Area Delta
+----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+LUT                                 N/A           2515            N/A        N/A
+FF                                  N/A              8            N/A        N/A
+BRAM Tile                           N/A              0            N/A        N/A
+URAM                                N/A              0            N/A        N/A
+DSP                                 N/A              0            N/A        N/A
+LUT as Logic                        N/A           2515            N/A        N/A
+LUT as Memory                       N/A              0            N/A        N/A
+RAMB36                              N/A              0            N/A        N/A
+RAMB18                              N/A              0            N/A        N/A
+MUXF7                               N/A              0            N/A        N/A
+MUXF8                               N/A              0            N/A        N/A
+
+Power Delta
+-----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+Total On-Chip Power                 N/A            N/A            N/A        N/A
+Total Dynamic Power                 N/A            N/A            N/A        N/A
+Device Static Power                 N/A            N/A            N/A        N/A
+
+[Threadlet SRAM-like]
+---------------------
+baseline utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/utilization_threadlet_sram_like_only.rpt
+threadlet utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/utilization_threadlet_sram_like_only.rpt
+baseline power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/power_threadlet_sram_like_only.rpt
+threadlet power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/power_threadlet_sram_like_only.rpt
+
+Area Delta
+----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+LUT                                 320          10071          +9751  +3047.19%
+FF                                    0           1588          +1588        N/A
+BRAM Tile                             0              4             +4        N/A
+URAM                                  0              0             +0        N/A
+DSP                                   0              0             +0        N/A
+LUT as Logic                          0           3959          +3959        N/A
+LUT as Memory                       320           6112          +5792  +1810.00%
+RAMB36                                0              0             +0        N/A
+RAMB18                                0              8             +8        N/A
+MUXF7                                 0            216           +216        N/A
+MUXF8                                 0              0             +0        N/A
+
+Power Delta
+-----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+Total On-Chip Power                 N/A            N/A            N/A        N/A
+Total Dynamic Power                 N/A            N/A            N/A        N/A
+Device Static Power                 N/A            N/A            N/A        N/A
+
+[Synthesized Printf]
+--------------------
+baseline utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/utilization_synthesized_printf_only.rpt
+threadlet utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/utilization_synthesized_printf_only.rpt
+baseline power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/power_synthesized_printf_only.rpt
+threadlet power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/power_synthesized_printf_only.rpt
+
+Area Delta
+----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+LUT                                 N/A            N/A            N/A        N/A
+FF                                  N/A            N/A            N/A        N/A
+BRAM Tile                           N/A            N/A            N/A        N/A
+URAM                                N/A            N/A            N/A        N/A
+DSP                                 N/A            N/A            N/A        N/A
+LUT as Logic                        N/A            N/A            N/A        N/A
+LUT as Memory                       N/A            N/A            N/A        N/A
+RAMB36                              N/A            N/A            N/A        N/A
+RAMB18                              N/A            N/A            N/A        N/A
+MUXF7                               N/A            N/A            N/A        N/A
+MUXF8                               N/A            N/A            N/A        N/A
+
+Power Delta
+-----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+Total On-Chip Power                 N/A            N/A            N/A        N/A
+Total Dynamic Power                 N/A            N/A            N/A        N/A
+Device Static Power                 N/A            N/A            N/A        N/A
+
+[Synthesized Assert]
+--------------------
+baseline utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/utilization_synthesized_assert_only.rpt
+threadlet utilization: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/utilization_synthesized_assert_only.rpt
+baseline power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/baseline/power_synthesized_assert_only.rpt
+threadlet power      : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/power_synthesized_assert_only.rpt
+
+Area Delta
+----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+LUT                                 N/A            N/A            N/A        N/A
+FF                                  N/A            N/A            N/A        N/A
+BRAM Tile                           N/A            N/A            N/A        N/A
+URAM                                N/A            N/A            N/A        N/A
+DSP                                 N/A            N/A            N/A        N/A
+LUT as Logic                        N/A            N/A            N/A        N/A
+LUT as Memory                       N/A            N/A            N/A        N/A
+RAMB36                              N/A            N/A            N/A        N/A
+RAMB18                              N/A            N/A            N/A        N/A
+MUXF7                               N/A            N/A            N/A        N/A
+MUXF8                               N/A            N/A            N/A        N/A
+
+Power Delta
+-----------
+Metric                         Baseline      Threadlet          Delta    Delta %
+Total On-Chip Power                 N/A            N/A            N/A        N/A
+Total Dynamic Power                 N/A            N/A            N/A        N/A
+Device Static Power                 N/A            N/A            N/A        N/A
+
+CSV written to: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet_vs_baseline_summary.csv
+Phase 3 area breakdown CSV written to: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/area_breakdown_phase3.csv
+
+Summary written to: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet_vs_baseline_summary.txt
+CSV written to    : /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet_vs_baseline_summary.csv
+Phase 3 CSV written to: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/area_breakdown_phase3.csv
+(base) ]0;qxh@zlr-Z370-HD3: ~/CHIPYARD_TEST/chipyard/generators

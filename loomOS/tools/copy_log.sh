@@ -1,0 +1,1 @@
+cp /home/qxh/FIRESIM_RUNS_DIR/sim_slot_0/uartlog $1

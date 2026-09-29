@@ -1,0 +1,271 @@
+// SPDX-License-Identifier: MPL-2.0
+
+#![allow(dead_code)]
+
+//! Kernel memory space management.
+//!
+//! The kernel memory space is currently managed as follows, if the
+//! address width is 48 bits (with 47 bits kernel space).
+//!
+#![doc = " TODO: the cap of linear mapping (the start of vm alloc) are raised"]
+//! to workaround for high IO in TDX. We need actual vm alloc API to have
+//! a proper fix.
+//!
+//! ```text
+//! +-+ <- the highest used address (0xffff_ffff_ffff_0000)
+//! | |         For the kernel code, 1 GiB. Mapped frames are tracked.
+//! +-+ <- 0xffff_ffff_8000_0000
+//! | |
+//! | |         Unused hole.
+//! +-+ <- 0xffff_e100_0000_0000
+//! | |         For frame metadata, 1 TiB. Mapped frames are untracked.
+//! +-+ <- 0xffff_e000_0000_0000
+//! | |         For [`KVirtArea<Tracked>`], 16 TiB. Mapped pages are tracked with handles.
+//! +-+ <- 0xffff_d000_0000_0000
+//! | |         For [`KVirtArea<Untracked>`], 16 TiB. Mapped pages are untracked.
+//! +-+ <- the middle of the higher half (0xffff_c000_0000_0000)
+//! | |
+//! | |
+//! | |
+//! | |         For linear mappings, 64 TiB.
+//! | |         Mapped physical addresses are untracked.
+//! | |
+//! | |
+//! | |
+//! +-+ <- the base of high canonical address (0xffff_8000_0000_0000)
+//! ```
+//!
+//! If the address width is (according to [`crate::arch::mm::PagingConsts`])
+//! 39 bits or 57 bits, the memory space just adjust proportionally.
+//! 
+//! 
+
+pub(crate) mod kvirt_area;
+
+use core::ops::Range;
+
+use align_ext::AlignExt;
+use log::info;
+use spin::Once;
+
+use super::{
+    frame::{
+        meta::{impl_frame_meta_for, mapping, MetaPageMeta},
+        Frame, Segment,
+    },
+    nr_subpage_per_huge,
+    page_prop::{CachePolicy, PageFlags, PageProperty, PrivilegedPageFlags},
+    page_table::{KernelMode, PageTable},
+    Paddr, PagingConstsTrait, Vaddr, PAGE_SIZE,
+};
+use crate::{
+    arch::mm::{PageTableEntry, PagingConsts},
+    boot::memory_region::MemoryRegionType,
+};
+
+/// The shortest supported address width is 39 bits. And the literal
+/// values are written for 48 bits address width. Adjust the values
+/// by arithmetic left shift.
+const ADDR_WIDTH_SHIFT: isize = PagingConsts::ADDRESS_WIDTH as isize - 48;
+
+/// Start of the kernel address space.
+/// This is the _lowest_ address of the x86-64's _high_ canonical addresses.
+pub const KERNEL_BASE_VADDR: Vaddr = 0xffff_8000_0000_0000 << ADDR_WIDTH_SHIFT;
+/// End of the kernel address space (non inclusive).
+pub const KERNEL_END_VADDR: Vaddr = 0xffff_ffff_ffff_0000 << ADDR_WIDTH_SHIFT;
+
+/// The kernel code is linear mapped to this address.
+///
+/// FIXME: This offset should be randomly chosen by the loader or the
+/// boot compatibility layer. But we disabled it because OSTD
+/// doesn't support relocatable kernel yet.
+pub fn kernel_loaded_offset() -> usize {
+    KERNEL_CODE_BASE_VADDR
+}
+
+#[cfg(target_arch = "x86_64")]
+const KERNEL_CODE_BASE_VADDR: usize = 0xffff_ffff_8000_0000 << ADDR_WIDTH_SHIFT;
+#[cfg(target_arch = "riscv64")]
+const KERNEL_CODE_BASE_VADDR: usize = 0xffff_ffff_0000_0000 << ADDR_WIDTH_SHIFT;
+
+const FRAME_METADATA_CAP_VADDR: Vaddr = 0xffff_e100_0000_0000 << ADDR_WIDTH_SHIFT;
+const FRAME_METADATA_BASE_VADDR: Vaddr = 0xffff_e000_0000_0000 << ADDR_WIDTH_SHIFT;
+pub(in crate::mm) const FRAME_METADATA_RANGE: Range<Vaddr> =
+    FRAME_METADATA_BASE_VADDR..FRAME_METADATA_CAP_VADDR;
+
+const TRACKED_MAPPED_PAGES_BASE_VADDR: Vaddr = 0xffff_d000_0000_0000 << ADDR_WIDTH_SHIFT;
+pub const TRACKED_MAPPED_PAGES_RANGE: Range<Vaddr> =
+    TRACKED_MAPPED_PAGES_BASE_VADDR..FRAME_METADATA_BASE_VADDR;
+
+const VMALLOC_BASE_VADDR: Vaddr = 0xffff_c000_0000_0000 << ADDR_WIDTH_SHIFT;
+pub const VMALLOC_VADDR_RANGE: Range<Vaddr> = VMALLOC_BASE_VADDR..TRACKED_MAPPED_PAGES_BASE_VADDR;
+
+/// The base address of the linear mapping of all physical
+/// memory in the kernel address space.
+pub const LINEAR_MAPPING_BASE_VADDR: Vaddr = 0xffff_8000_0000_0000 << ADDR_WIDTH_SHIFT;
+pub const LINEAR_MAPPING_VADDR_RANGE: Range<Vaddr> = LINEAR_MAPPING_BASE_VADDR..VMALLOC_BASE_VADDR;
+
+/// Convert physical address to virtual address using offset, only available inside `ostd`
+pub fn paddr_to_vaddr(pa: Paddr) -> usize {
+    debug_assert!(pa < VMALLOC_BASE_VADDR - LINEAR_MAPPING_BASE_VADDR);
+    pa + LINEAR_MAPPING_BASE_VADDR
+}
+
+/// Returns whether the given address should be mapped as tracked.
+///
+/// About what is tracked mapping, see [`crate::mm::frame::meta::MapTrackingStatus`].
+pub(crate) fn should_map_as_tracked(addr: Vaddr) -> bool {
+    !(LINEAR_MAPPING_VADDR_RANGE.contains(&addr) || VMALLOC_VADDR_RANGE.contains(&addr))
+}
+
+/// The kernel page table instance.
+///
+/// It manages the kernel mapping of all address spaces by sharing the kernel part. And it
+/// is unlikely to be activated.
+pub static KERNEL_PAGE_TABLE: Once<PageTable<KernelMode, PageTableEntry, PagingConsts>> =
+    Once::new();
+
+/// Initializes the kernel page table.
+///
+/// This function should be called after:
+///  - the page allocator and the heap allocator are initialized;
+///  - the memory regions are initialized.
+///
+/// This function should be called before:
+///  - any initializer that modifies the kernel page table.
+pub fn init_kernel_page_table(meta_pages: Segment<MetaPageMeta>) {
+    info!("Initializing the kernel page table");
+    crate::early_println!("[ostd::init_kernel_page_table] Initializing the kernel page table");
+
+    let regions = crate::boot::memory_regions();
+    let phys_mem_cap = regions.iter().map(|r| r.base() + r.len()).max().unwrap();
+
+    // Start to initialize the kernel page table.
+    let kpt = PageTable::<KernelMode>::empty();
+
+    // Make shared the page tables mapped by the root table in the kernel space.
+    {
+        let pte_index_max = nr_subpage_per_huge::<PagingConsts>();
+        kpt.make_shared_tables(pte_index_max / 2..pte_index_max);
+    }
+
+    // Do linear mappings for the kernel.
+    {
+        let from = LINEAR_MAPPING_BASE_VADDR..LINEAR_MAPPING_BASE_VADDR + phys_mem_cap;
+        let to = 0..phys_mem_cap;
+        // On Rocket, A/D bits are not set by hardware. Pre-set ACCESSED/ DIRTY
+        // to avoid faults on first access of linear-mapped memory.
+        let prop = PageProperty {
+            flags: PageFlags::RW | PageFlags::ACCESSED | PageFlags::DIRTY,
+            cache: CachePolicy::Writeback,
+            priv_flags: PrivilegedPageFlags::GLOBAL,
+        };
+        // SAFETY: we are doing the linear mapping for the kernel.
+        unsafe {
+            kpt.map(&from, &to, prop).unwrap();
+        }
+    }
+    // Map the metadata pages.
+    {
+        let start_va = mapping::frame_to_meta::<PagingConsts>(0);
+        let from = start_va..start_va + meta_pages.size();
+        let prop = PageProperty {
+            flags: PageFlags::RW | PageFlags::ACCESSED | PageFlags::DIRTY,
+            cache: CachePolicy::Writeback,
+            priv_flags: PrivilegedPageFlags::GLOBAL,
+        };
+        let mut cursor = kpt.cursor_mut(&from).unwrap();
+        for meta_page in meta_pages {
+            // SAFETY: we are doing the metadata mappings for the kernel.
+            unsafe {
+                let _old = cursor.map(meta_page.into(), prop);
+            }
+        }
+    }
+    // Map for the I/O area（Uncacheable）。
+    {
+        // QEMU RISC-V virt MMIO ：
+
+        //    virt_memmap[VIRT_PLATFORM_BUS] = { 0x0400_0000, 0x0200_0000 };
+
+
+        const IO_RANGES: &[(usize, usize)] = &[
+            (0x0400_0000, 0x0600_0000), // platform bus window (32 MiB)
+            (0x1000_0000, 0x1003_0000), // uart/virtio/rtc 
+        ];
+
+        let prop = PageProperty {
+            flags: PageFlags::RW | PageFlags::ACCESSED | PageFlags::DIRTY,
+            cache: CachePolicy::Uncacheable,
+            priv_flags: PrivilegedPageFlags::GLOBAL,
+        };
+
+        for (start, end) in IO_RANGES.iter().copied() {
+            let to = start.align_down(PAGE_SIZE)..end.align_up(PAGE_SIZE);
+            let from = LINEAR_MAPPING_BASE_VADDR + to.start
+                ..LINEAR_MAPPING_BASE_VADDR + to.end;
+            //SAFETY: we are doing I/O mappings for the kernel.
+            unsafe {
+                kpt.map(&from, &to, prop).unwrap();
+            }
+        }
+    }
+    // Map for the kernel code itself.
+
+    {
+        let region = regions
+            .iter()
+            .find(|r| r.typ() == MemoryRegionType::Kernel)
+            .unwrap();
+        let offset = kernel_loaded_offset();
+        let to =
+            region.base().align_down(PAGE_SIZE)..(region.base() + region.len()).align_up(PAGE_SIZE);
+        let from = to.start + offset..to.end + offset;
+        // Pre-set ACCESSED/ DIRTY for kernel text/data to avoid instruction/data faults
+        // on first fetch or load/store.
+        let prop = PageProperty {
+            flags: PageFlags::RWX | PageFlags::ACCESSED | PageFlags::DIRTY,
+            cache: CachePolicy::Writeback,
+            priv_flags: PrivilegedPageFlags::GLOBAL,
+        };
+        let mut cursor = kpt.cursor_mut(&from).unwrap();
+        for frame_paddr in to.step_by(PAGE_SIZE) {
+            let page = Frame::<KernelMeta>::from_unused(frame_paddr, KernelMeta);
+            // SAFETY: we are doing mappings for the kernel.
+            unsafe {
+                let _old = cursor.map(page.into(), prop);
+            }
+        }
+    }
+
+    KERNEL_PAGE_TABLE.call_once(|| kpt);
+}
+
+/// Activates the kernel page table.
+///
+/// # Safety
+///
+/// This function should only be called once per CPU.
+pub unsafe fn activate_kernel_page_table() {
+    crate::early_println!("[kpt] enter activate_kernel_page_table");
+    let kpt = KERNEL_PAGE_TABLE
+        .get()
+        .expect("The kernel page table is not initialized yet");
+    // SAFETY: the kernel page table is initialized properly.
+    unsafe {
+        kpt.first_activate_unchecked();
+        crate::arch::mm::tlb_flush_all_including_global();
+    }
+
+    // SAFETY: the boot page table is OK to be dismissed now since
+    // the kernel page table is activated just now.
+    unsafe {
+        crate::mm::page_table::boot_pt::dismiss();
+    }
+}
+
+/// The metadata of pages that contains the kernel itself.
+#[derive(Debug, Default)]
+pub struct KernelMeta;
+
+impl_frame_meta_for!(KernelMeta);

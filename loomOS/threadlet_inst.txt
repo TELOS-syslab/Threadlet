@@ -1,0 +1,23 @@
+/*each core has 16 hardware threadlets(id 0-15),and each threadlet stores:
+  1.pc
+  2.sp pointer
+  3.CSR register set
+  4.avalable flag: whether this threadlet is avalable or occupied by a thread*/
+
+/*create a thread and set its pc to ptr. The hardware should chooses a avalable threadlet id and return the threadlet id(0-15), return -1 if failed.*/
+static int threadlet_create(void *ptr) {
+  int ret;
+  asm volatile (".insn r 0x0B, 0, 0x1, %0, %1, x0" :"=r"(ret) :"r"(ptr));
+  ctx_sync(ret);
+  return ret;
+}
+
+/*set a thread on threadlet with id num to be terminated, return 0 if success, -1 if failed*/
+static int threadlet_terminate(int num) {
+  int ret;
+  asm volatile (".insn r 0x0B, 0, 0x2 , %0, %1, x0" :"=r"(ret) :"r"(num));
+  return ret;
+}
+
+
+

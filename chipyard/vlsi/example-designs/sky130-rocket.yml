@@ -1,0 +1,22 @@
+# Override configurations in ../example-sky130.yml and example-designs
+
+# Specify clock signals
+# Rocket/RocketTile names clock signal "clock" instead of "clock_uncore"
+vlsi.inputs.clocks: [
+  {name: "clock", period: "20ns", uncertainty: "1ns"}
+]
+
+# Placement Constraints
+# Rocket/RocketTile requires a much smaller footprint
+vlsi.inputs.placement_constraints:
+  - path: "Rocket"
+    type: toplevel
+    x: 0
+    y: 0
+    width: 2500.1
+    height: 1496
+    margins:
+      left: 10.12
+      right: 10.12
+      top: 10.88
+      bottom: 10.88

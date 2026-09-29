@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Jul  5 20:48:13 2026
+# Process ID: 3527265
+# Current directory: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts
+# Command line: vivado -mode batch -source /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/run_vivado_reports.tcl -tclargs /home/qxh/CHIPYARD_TEST/chipyard/sims/firesim/deploy/results-build/2026-07-05--03-11-10-threadlet_sosploom3_7_noprint/cl_xilinx_vcu118-firesim-FireSim-FireSimLoopbackNICRocket4GiBDRAMSV484CoreConfig-BaseXilinxVCU118Config/build/post_route.dcp /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet
+# Log file: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/vivado.log
+# Journal file: /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/vivado.jou
+#-----------------------------------------------------------
+source /home/qxh/CHIPYARD_TEST/chipyard/generators/rocket-chip/scripts/threadlet_vivado_compare_20260705_203528/threadlet/run_vivado_reports.tcl

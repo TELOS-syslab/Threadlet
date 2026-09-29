@@ -1,0 +1,1 @@
+riscv64-unknown-elf-objdump -d -C ../target/osdk/aster-nix-osdk-bin.qemu_elf | grep -n500 "$1" 

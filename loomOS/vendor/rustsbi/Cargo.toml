@@ -1,0 +1,29 @@
+[workspace]
+resolver = "3"
+members = [
+    "library/macros",
+    "library/sbi-rt",
+    "library/sbi-spec",
+    "library/sbi-testing",
+    "library/rustsbi",
+    "prototyper/prototyper",
+    "prototyper/bench-kernel",
+    "prototyper/test-kernel",
+    "xtask",
+]
+default-members = [
+    "library/macros",
+    "library/sbi-rt",
+    "library/sbi-spec",
+    "library/rustsbi",
+]
+
+[workspace.package]
+edition = "2024"
+license = "MulanPSL-2.0 OR MIT"
+repository = "https://github.com/rustsbi/rustsbi"
+
+[profile.release]
+debug = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

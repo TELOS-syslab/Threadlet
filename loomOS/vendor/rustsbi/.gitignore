@@ -1,0 +1,9 @@
+# Cargo build path and library exclusions
+/target
+Cargo.lock
+
+# IntelliJ IDEA directory
+/.idea
+
+# Mac OS X hidden files
+.DS_Store

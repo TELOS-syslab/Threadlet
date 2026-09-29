@@ -1,0 +1,1 @@
+sed '/Core1/d' /home/qxh/FIRESIM_RUNS_DIR/sim_slot_0/synthesized-prints.out0

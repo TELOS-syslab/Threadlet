@@ -1,0 +1,1 @@
+savedcmd_/home/qxh/Threadlet-AE/benchmark/ipi/ipi.ko := ld.lld-15 -r  -melf64lriscv -z noexecstack  --build-id=sha1  -T scripts/module.lds -o /home/qxh/Threadlet-AE/benchmark/ipi/ipi.ko /home/qxh/Threadlet-AE/benchmark/ipi/ipi.o /home/qxh/Threadlet-AE/benchmark/ipi/ipi.mod.o;  make -f ./arch/riscv/Makefile.postlink /home/qxh/Threadlet-AE/benchmark/ipi/ipi.ko

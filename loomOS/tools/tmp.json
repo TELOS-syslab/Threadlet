@@ -1,0 +1,17 @@
+{
+  "name" : "asterinasThreadlet-base",
+  "asterinas" : {
+      "source" : "/home/qxh/asterinas_threadlet"
+  },
+  "firmware" : {
+      "opensbi-src" : "/home/qxh/asterinas_threadlet/opensbi"
+  },
+  "fdt_path": "/home/qxh/asterinas_threadlet/tools/threadlet_intr_scheduling_4c.dtb",
+  "overlay" : "overlay",
+  "host-init" : "host-init.sh",
+  "base-img": "/home/qxh/CHIPYARD_TEST/chipyard/software/firemarshal/images/firechip/br.7251/br.7251.img",
+  "files" : [
+      [ "trigger/start", "/usr/bin/firesim-start-trigger"],
+      [ "trigger/end", "/usr/bin/firesim-end-trigger"]
+  ]
+}

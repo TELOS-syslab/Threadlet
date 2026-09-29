@@ -1,0 +1,10 @@
+CMakeCache.txt
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+*.o
+*.riscv
+*.dump
+*.img
+libgloss/

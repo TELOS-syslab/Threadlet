@@ -1,0 +1,1 @@
+savedcmd_/home/qxh/Threadlet-AE/benchmark/mutex/mutex.ko := ld.lld-15 -r  -melf64lriscv -z noexecstack  --build-id=sha1  -T scripts/module.lds -o /home/qxh/Threadlet-AE/benchmark/mutex/mutex.ko /home/qxh/Threadlet-AE/benchmark/mutex/mutex.o /home/qxh/Threadlet-AE/benchmark/mutex/mutex.mod.o;  make -f ./arch/riscv/Makefile.postlink /home/qxh/Threadlet-AE/benchmark/mutex/mutex.ko

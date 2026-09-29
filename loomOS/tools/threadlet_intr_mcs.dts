@@ -1,0 +1,199 @@
+/dts-v1/;
+
+/ {
+	#address-cells = <2>;
+	#size-cells = <2>;
+	compatible = "ucb-bar,chipyard-dev";
+	model = "ucb-bar,chipyard";
+	L3: aliases {
+		serial0 = &L28;
+	};
+		L19: chosen {
+			stdout-path = &L28;
+			bootargs = "SHELL=/bin/sh LOGNAME=root HOME=/ USER=root PATH=/bin:/benchmark init=/usr/bin/busybox ostd.log_level=error enable_mcs_test -- sh";
+		};
+	L2: cpus {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		timebase-frequency = <1000000>;
+		L13: cpu@0 {
+			clock-frequency = <0>;
+			compatible = "sifive,rocket0", "riscv";
+			d-cache-block-size = <64>;
+			d-cache-sets = <64>;
+			d-cache-size = <32768>;
+			d-tlb-sets = <1>;
+			d-tlb-size = <32>;
+			device_type = "cpu";
+			hardware-exec-breakpoint-count = <1>;
+			i-cache-block-size = <64>;
+			i-cache-sets = <64>;
+			i-cache-size = <32768>;
+			i-tlb-sets = <1>;
+			i-tlb-size = <32>;
+			mmu-type = "riscv,sv48";
+			next-level-cache = <&L10>;
+			reg = <0x0>;
+			riscv,isa = "rv64imafdbzicsr_zifencei_zihpm_zfh_zba_zbb_zbs_xrocket_threadlet";
+			riscv,pmpgranularity = <4>;
+			riscv,pmpregions = <8>;
+			status = "okay";
+			threadlet = <8>;
+			intr-threadlet = <1>;
+			timebase-frequency = <1000000>;
+			tlb-split;
+			L11: interrupt-controller {
+				#interrupt-cells = <1>;
+				compatible = "riscv,cpu-intc";
+				interrupt-controller;
+			};
+		};
+		L16: cpu@1 {
+			clock-frequency = <0>;
+			compatible = "sifive,rocket0", "riscv";
+			d-cache-block-size = <64>;
+			d-cache-sets = <64>;
+			d-cache-size = <32768>;
+			d-tlb-sets = <1>;
+			d-tlb-size = <32>;
+			device_type = "cpu";
+			hardware-exec-breakpoint-count = <1>;
+			i-cache-block-size = <64>;
+			i-cache-sets = <64>;
+			i-cache-size = <32768>;
+			i-tlb-sets = <1>;
+			i-tlb-size = <32>;
+			mmu-type = "riscv,sv48";
+			next-level-cache = <&L10>;
+			reg = <0x1>;
+			riscv,isa = "rv64imafdbzicsr_zifencei_zihpm_zfh_zba_zbb_zbs_xrocket_threadlet";
+			riscv,pmpgranularity = <4>;
+			riscv,pmpregions = <8>;
+			status = "okay";
+			threadlet = <8>;
+			intr-threadlet = <1>;
+			timebase-frequency = <1000000>;
+			tlb-split;
+			L14: interrupt-controller {
+				#interrupt-cells = <1>;
+				compatible = "riscv,cpu-intc";
+				interrupt-controller;
+			};
+		};
+	};
+	L31: htif {
+		compatible = "ucb,htif0";
+	};
+	L25: memory@8000000 {
+		device_type = "memory";
+		reg = <0x0 0x8000000 0x0 0x10000>;
+		status = "disabled";
+	};
+	L22: memory@80000000 {
+		device_type = "memory";
+		reg = <0x0 0x80000000 0x1 0x0>;
+	};
+	L1: soc {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		compatible = "ucb-bar,chipyard-soc", "simple-bus";
+		ranges;
+		L27: blkdev-controller@10015000 {
+			compatible = "ucb-bar,blkdev";
+			interrupt-parent = <&L18>;
+			interrupts = <1>;
+			reg = <0x0 0x10015000 0x0 0x1000>;
+			reg-names = "control";
+		};
+		L26: boot-address-reg@1000 {
+			reg = <0x0 0x1000 0x0 0x1000>;
+			reg-names = "control";
+		};
+		L10: cache-controller@2010000 {
+			cache-block-size = <64>;
+			cache-level = <2>;
+			cache-sets = <1024>;
+			cache-size = <524288>;
+			cache-unified;
+			compatible = "sifive,inclusivecache0", "cache";
+			next-level-cache = <&L22 &L25>;
+			reg = <0x0 0x2010000 0x0 0x1000>;
+			reg-names = "control";
+			sifive,mshr-count = <7>;
+		};
+		L7: cbus_clock {
+			#clock-cells = <0>;
+			clock-frequency = <1000000000>;
+			clock-output-names = "cbus_clock";
+			compatible = "fixed-clock";
+		};
+		L17: clint@2000000 {
+			compatible = "riscv,clint0";
+			interrupts-extended = <&L11 3 &L11 7 &L14 3 &L14 7>;
+			reg = <0x0 0x2000000 0x0 0x10000>;
+			reg-names = "control";
+		};
+		L8: error-device@3000 {
+			compatible = "sifive,error0";
+			reg = <0x0 0x3000 0x0 0x1000>;
+		};
+		L6: fbus_clock {
+			#clock-cells = <0>;
+			clock-frequency = <1000000000>;
+			clock-output-names = "fbus_clock";
+			compatible = "fixed-clock";
+		};
+		L29: ice-nic@10016000 {
+			compatible = "ucb-bar,ice-nic";
+			interrupt-parent = <&L18>;
+			interrupts = <3 4 5>;
+			reg = <0x0 0x10016000 0x0 0x1000>;
+			reg-names = "control";
+		};
+		L18: interrupt-controller@c000000 {
+			#interrupt-cells = <1>;
+			compatible = "riscv,plic0";
+			interrupt-controller;
+			interrupts-extended = <&L11 11 &L11 9 &L14 11 &L14 9>;
+			reg = <0x0 0xc000000 0x0 0x4000000>;
+			reg-names = "control";
+			riscv,max-priority = <7>;
+			riscv,ndev = <5>;
+		};
+		L9: mbus_clock {
+			#clock-cells = <0>;
+			clock-frequency = <1000000000>;
+			clock-output-names = "mbus_clock";
+			compatible = "fixed-clock";
+		};
+		L5: pbus_clock {
+			#clock-cells = <0>;
+			clock-frequency = <1000000000>;
+			clock-output-names = "pbus_clock";
+			compatible = "fixed-clock";
+		};
+		L24: rom@10000 {
+			compatible = "sifive,rom0";
+			reg = <0x0 0x10000 0x0 0x10000>;
+			reg-names = "mem";
+		};
+		L4: sbus_clock {
+			#clock-cells = <0>;
+			clock-frequency = <1000000000>;
+			clock-output-names = "sbus_clock";
+			compatible = "fixed-clock";
+		};
+		L28: serial@10020000 {
+			clocks = <&L5>;
+			compatible = "sifive,uart0";
+			interrupt-parent = <&L18>;
+			interrupts = <2>;
+			reg = <0x0 0x10020000 0x0 0x1000>;
+			reg-names = "control";
+		};
+		L30: tile-reset-setter@110000 {
+			reg = <0x0 0x110000 0x0 0x1000>;
+			reg-names = "control";
+		};
+	};
+};

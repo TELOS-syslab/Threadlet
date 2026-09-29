@@ -1,0 +1,12 @@
+[0x000000010147f8c0] receive: hardware cost: 61, hardware_to_hard_interrupt: 6493, hard_interrupt_cost: 1323, hard_to_soft: 30201, soft_interrupt_cost: 50009
+[0x00000001016f9ec0] receive: hardware cost: 70, hardware_to_hard_interrupt: 1862, hard_interrupt_cost: 346, hard_to_soft: 17380, soft_interrupt_cost: 83026
+[0x00000001016f9740] receive: hardware cost: 63, hardware_to_hard_interrupt: 4204, hard_interrupt_cost: 838, hard_to_soft: 25909, soft_interrupt_cost: 46639
+[0x000000010147f140] receive: hardware cost: 63, hardware_to_hard_interrupt: 7579, hard_interrupt_cost: 814, hard_to_soft: 25037, soft_interrupt_cost: 44827
+[0x00000001016f8fc0] receive: hardware cost: 69, hardware_to_hard_interrupt: 7223, hard_interrupt_cost: 848, hard_to_soft: 24899, soft_interrupt_cost: 44539
+[0x000000010147e9c0] receive: hardware cost: 63, hardware_to_hard_interrupt: 7230, hard_interrupt_cost: 873, hard_to_soft: 25782, soft_interrupt_cost: 43901
+[0x00000001016f8840] receive: hardware cost: 63, hardware_to_hard_interrupt: 6549, hard_interrupt_cost: 868, hard_to_soft: 24815, soft_interrupt_cost: 45740
+[0x00000001016f80c0] receive: hardware cost: 69, hardware_to_hard_interrupt: 7354, hard_interrupt_cost: 836, hard_to_soft: 24612, soft_interrupt_cost: 18584
+[0x000000010147e240] receive: hardware cost: 72, hardware_to_hard_interrupt: 7916, hard_interrupt_cost: 763, hard_to_soft: 24533, soft_interrupt_cost: 18667
+[0x00000001017078c0] receive: hardware cost: 64, hardware_to_hard_interrupt: 7175, hard_interrupt_cost: 770, hard_to_soft: 24126, soft_interrupt_cost: 17823
+[0x000000010147dac0] receive: hardware cost: 72, hardware_to_hard_interrupt: 7102, hard_interrupt_cost: 755, hard_to_soft: 24469, soft_interrupt_cost: 17450
+[0x000000010147d340] receive: hardware cost: 63, hardware_to_hard_interrupt: 7197, hard_interrupt_cost: 794, hard_to_soft: 24350, soft_interrupt_cost: 17975

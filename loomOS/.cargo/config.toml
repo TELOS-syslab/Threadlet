@@ -1,0 +1,7 @@
+[patch.crates-io]
+rustsbi = { path = "vendor/rustsbi/library/rustsbi" }
+rustfmt-nightly = { path = "vendor/fmt" }
+sbi-spec = { path = "vendor/rustsbi/library/sbi-spec" }
+sbi-rt = { path = "vendor/rustsbi/library/sbi-rt" }
+rustsbi-macros = { path = "vendor/rustsbi/library/macros" }
+fdt = { path = "vendor/fdt" }

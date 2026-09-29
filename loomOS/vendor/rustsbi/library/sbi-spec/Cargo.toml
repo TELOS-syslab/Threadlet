@@ -1,0 +1,23 @@
+[package]
+name = "sbi-spec"
+description = "Definitions and constants in the RISC-V Supervisor Binary Interface (RISC-V SBI)"
+version = "0.0.8"
+authors = ["YdrMaster <ydrml@hotmail.com>", "Luo Jia <me@luojia.cc>"]
+documentation = "https://docs.rs/sbi-spec"
+edition = "2024"
+license = "MulanPSL-2.0 OR MIT"
+repository = "https://github.com/rustsbi/rustsbi"
+readme = "README.md"
+keywords = ["riscv", "sbi", "rustsbi"]
+categories = ["os", "embedded", "hardware-support", "no-std"]
+
+[dev-dependencies]
+static_assertions = "1.1.0"
+
+[features]
+default = []
+# Support for the legacy extension; this feature is not included by default.
+legacy = []
+
+[dependencies]
+bitflags = "2.6.0"
